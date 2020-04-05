@@ -1,0 +1,14 @@
+<script>
+    $("#boton").on("click", function() {
+        $("#formulario").validate({
+            rules: {},
+            messages: {},
+            errorElement: "div",
+            errorClass: "error",
+            errorPlacement: function(error, element) {
+                error.insertAfter(element);
+            },
+            submitHandler: function() {}
+        });
+    });
+</script>

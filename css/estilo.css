@@ -1,0 +1,10 @@
+.correoFooter {
+    text-decoration: none;
+    color: white;
+}
+
+.correoFooter:hover {
+    text-decoration: none;
+    color: #dbd3d3;
+    font-size: 18px;
+}
