@@ -18,7 +18,8 @@
         <a class="nav-link" href="recetas.php"><i class="fas fa-home"></i> Recetas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.php"><i class="fas fa-home"></i> Ingredientes</a>
+        <!-- Duda-->
+        <a class="nav-link" href="ingredientes.php"><i class="fas fa-home"></i> Ingredientes</a>
       </li>
     </ul>
   </div>

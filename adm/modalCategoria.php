@@ -19,7 +19,7 @@
       <div class="modal-body">
         <form class="form" id="formularioEditar">
             <!--C-->
-            <label for="nombreCategoria">nombre de la categoría: </label>
+            <label for="nombreCategoria">Nombre de la categoría: </label>
             <input type="hidden" name="accion" value="<?php echo$accion ?>">
             <!--C-->
             <input type="hidden" name="idCategoria" value="<?php echo$idCategoria ?>">
