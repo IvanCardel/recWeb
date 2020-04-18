@@ -11,11 +11,11 @@
 
 <body>
     <!--- Carrusel -->
-    <?php 
+    <?php
         include_once("layout/slide.php");
     ?>
     <!-- navabar -->
-    <?php 
+    <?php
         include_once("layout/navbar.php");
     ?>
     <div class="container">
