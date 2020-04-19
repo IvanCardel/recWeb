@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/datatables.min.css">
-    <title>Pais</title>
+    <title>Inicio</title>
 </head>
 
 <body>
@@ -21,7 +21,15 @@
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-header">Total de Recetas</div>
                     <div class="card-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt sint ratione iusto sapiente consequatur. Deleniti non quam natus error quidem! Quos corporis a illo explicabo ad consequuntur porro aut molestias.</p>
+                    <?php 
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"select * from receta");
+                    while($fila=mysqli_fetch_array($resultado))
+                    {
+                        echo"<td>* ".$fila['nombreReceta']."</td>";
+                        echo"<p>";
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
@@ -29,7 +37,14 @@
                 <div class="card text-white bg-success mb-3">
                     <div class="card-header">Ultima Receta</div>
                     <div class="card-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt sint ratione iusto sapiente consequatur. Deleniti non quam natus error quidem! Quos corporis a illo explicabo ad consequuntur porro aut molestias.</p>
+                    <?php 
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"select * from receta order by (idReceta)desc");
+                    if($fila=mysqli_fetch_array($resultado))
+                    {
+                        echo"<td>* ".$fila['nombreReceta']."</td>";
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
@@ -39,7 +54,15 @@
                 <div class="card text-white bg-secondary mb-3">
                     <div class="card-header">Paises Totales</div>
                     <div class="card-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt sint ratione iusto sapiente consequatur. Deleniti non quam natus error quidem! Quos corporis a illo explicabo ad consequuntur porro aut molestias.</p>
+                    <?php 
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"select * from pais");
+                    while($fila=mysqli_fetch_array($resultado))
+                    {
+                        echo"<td>* ".$fila['nombrePais']."</td>";
+                        echo"<p>";
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
@@ -47,7 +70,15 @@
                 <div class="card text-dark bg-ligth mb-3">
                     <div class="card-header">Ingredientes Totales</div>
                     <div class="card-body">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt sint ratione iusto sapiente consequatur. Deleniti non quam natus error quidem! Quos corporis a illo explicabo ad consequuntur porro aut molestias.</p>
+                    <?php 
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"select * from ingrediente");
+                    while($fila=mysqli_fetch_array($resultado))
+                    {
+                        echo"<td>* ".$fila['nombreIngrediente']."</td>";
+                        echo"<p>";
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
