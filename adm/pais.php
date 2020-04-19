@@ -77,14 +77,14 @@
                 processing:     "Procesando",
                 search:         "Buscar",
                 lengthMenu:    "Mostrar _MENU_ Elementos",
-                info:           "pagina _START_ de _END_ en _TOTAL_ elmentos",
+                info:           "página _START_ de _END_ en _TOTAL_ elementos",
                 infoEmpty:      "Sin informacion",
                 infoFiltered:   "filtrado de _MAX_ elementos en total)",
                 paginate: {
                     first:      "primera",
                     previous:   "anterior",
                     next:       "siguiente",
-                    last:       "ultima"
+                    last:       "última"
                 },
                 aria: {
                     sortAscending:  ": Acendente",

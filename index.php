@@ -35,58 +35,15 @@
             </div>
 
         </div>
-
     </div>
 
-    <div class="container">
-        <div class="card mt-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="card-title">Enchiladas</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">12 de noviembre de 2019</h6>
-                        <p class="card-text"> Pais </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                    <div class=" offset-2 col-4">
-                        <img src="image/1.png" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="container">
-        <div class="card mt-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="card-title">Enchiladas</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">12 de noviembre de 2019</h6>
-                        <p class="card-text"> Pais </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                    <div class=" offset-2 col-4">
-                        <img src="image/1.png" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
+<br>
     <!-- Codigo Footer -->
     <div class="container-fluid bg-dark text-white">
         <div class="row pt-4">
             <div class="col-6">
                 <h4>Acerca de</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque consequuntur modi quis ullam voluptatibus! Ex quod atque hic vel quis provident alias architecto, ad ut incidunt quisquam facilis sapiente maxime.</p>
+                <p>Esto es un citio web de un proyecto escolar, consiste en un menú de recetas en el que podemos almacenar nuestras recetas de una manera sencilla.</p>
             </div>
 
             <div class="col-6">
