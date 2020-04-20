@@ -23,9 +23,9 @@
       <select>
         <option value="0">Seleccione:</option>
         <?php
-          $query = $mysqli -> query ("SELECT * FROM pais");
+          $query = $mysqli -> query ("SELECT * FROM ingrediente");
           while ($valores = mysqli_fetch_array($query)) {
-            echo '<option value="'.$valores[idPais].'">'.$valores[nombrePais].'</option>';
+            echo '<option value="'.$valores[idIngrediente].'">'.$valores[nombreIngrediente].'</option>';
           }
         ?>
       </select>
