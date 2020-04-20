@@ -42,7 +42,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php 
+    <?php 
         require_once("../conec.php");
         $resultado=mysqli_query($cn,"select * from pais");
         while($fila=mysqli_fetch_array($resultado)){
@@ -78,7 +78,7 @@
                 search:         "Buscar",
                 lengthMenu:    "Mostrar _MENU_ Elementos",
                 info:           "página _START_ de _END_ en _TOTAL_ elementos",
-                infoEmpty:      "Sin informacion",
+                infoEmpty:      "Sin información",
                 infoFiltered:   "filtrado de _MAX_ elementos en total)",
                 paginate: {
                     first:      "primera",
