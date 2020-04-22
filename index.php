@@ -18,47 +18,46 @@
     <?php
         include_once("layout/navbar.php");
     ?>
-    
 
-    <div class="container">
-        <div class="card mt-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                    <?php 
-                    require_once("conec.php");
-                    $resultado=mysqli_query($cn,"select * from receta A inner join pais B on (A.idPais = B.idPais) order by (idReceta)desc , fecha");
-                    if($fila=mysqli_fetch_array($resultado))
-                    {
-                        echo"<tr>";
-                        echo"<td> <h5> Nombre de la receta: ".$fila['nombreReceta']."</h5></td>";
-                        echo"<br>";
-                        echo"<td> <h6 class='card-subtitle mb-2 text-muted'> Fecha: ".$fila['fecha']."</h6></td>";
-                        echo"<br>";
-                        echo"<p class='card-text'> País:  ".$fila['nombrePais']."  </p>";
-                        echo"</tr>";
-                        echo"<br>";
-                    }
-                    ?>
-                    </div>
-                    <div class=" offset-2 col-4">
-                        <img src="image/1.png" class="img-fluid" alt="HolaMundo">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d933.9237358489584!2d-100.86588537083945!3d20.559658854826942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cbb352c603d93%3A0xeef7cc8bfc02a292!2sVilla%20de%20Her%C3%B3n%20104%2C%20Villas%20del%20Bajio%20I%2C%20Celaya%2C%20Gto.!5e0!3m2!1ses!2smx!4v1587358016321!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-<br>
-<br>
-<br>
+    <?php 
+        require_once("conec.php");
+        $resultado=mysqli_query($cn,"select * from receta A inner join pais B on (A.idPais = B.idPais) order by (idReceta)desc , fecha, foto");
+        while($fila=mysqli_fetch_array($resultado))
+        {
+            echo'<div class="container">';
+                echo'<div class="card mt-4">';
+                    echo'<div class="card-body">';
+                        echo'<div class="row">';
+                            echo'<div class="col-6">';
+                                echo"<tr>";
+                                    echo"<td> <h5> Nombre de la receta: ".$fila['nombreReceta']."</h5></td>";
+                                    echo"<br>";
+                                    echo"<td> <h6 class='card-subtitle mb-2 text-muted'> Fecha: ".$fila['fecha']."</h6></td>";
+                                    echo"<br>";
+                                    echo"<p class='card-text'> País:  ".$fila['nombrePais']."  </p>";
+                                echo"</tr>";
+                                    echo"<br>";
+                            echo"</div>";
+                            echo"<div class=' offset-2 col-4'>";
+                                
+                                echo"<img src= 'data:image/png;base64,      ".$fila['foto'].' " class=img-fluid" alt="HolaMundo">';
+                            echo"</div>";
+                        echo"</div>";
+                    echo"</div>";
+                echo"</div>";
+            echo"</div>";
+        }
+    ?>
+    <br>
+    <br>
+    <br>
     <!-- Codigo Footer -->
     <div class="container-fluid bg-dark text-white">
         <div class="row pt-4">
             <div class="col-6">
                 <h4>Acerca de</h4>
-                <p>Esto es un citio web de un proyecto escolar, consiste en un menú de recetas en el que podemos almacenar nuestras recetas de una manera sencilla.</p>
+                <p>Esto es un citio web de un proyecto escolar, consiste en un menú de recetas en el que podemos
+                    almacenar nuestras recetas de una manera sencilla.</p>
             </div>
 
             <div class="col-6">

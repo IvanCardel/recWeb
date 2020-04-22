@@ -17,25 +17,11 @@
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
-  <div align="center" class="container">                        
-    <p>Seleccione un pais del siguiente menú:</p>
-    <p>Países:
-      <select>
-        <option value="0">Seleccione:</option>
-        <?php
-          $query = $mysqli -> query ("SELECT * FROM ingrediente");
-          while ($valores = mysqli_fetch_array($query)) {
-            echo '<option value="'.$valores[idIngrediente].'">'.$valores[nombreIngrediente].'</option>';
-          }
-        ?>
-      </select>
-      <div class="row">
-                        <div class="offset-5 col-2">
-                            <input type="submit" value="Enviar" class="btn btn-primary btn-block" id="enviar">
-                        </div>
-                    </div>
-    </p>
-  </div>
+  
+
+
+
+  
 
   
   <script src="../js/jquery-3.1.1.js"></script>
