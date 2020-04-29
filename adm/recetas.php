@@ -1,6 +1,4 @@
-<?php 
-    $mysqli = new mysqli("localhost","root","","recetario");
-?>
+<?php require_once("Proteccion.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +10,12 @@
     <title>Recetario</title>
 </head>
 <body>
- <!-- Proteccion -->
- <?php require_once("Proteccion.php") ?>
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
   
 
-
-
-  
-
-  
-  <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/jquery-3.1.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/datatables.min.js"></script>

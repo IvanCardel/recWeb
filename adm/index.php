@@ -1,3 +1,4 @@
+<?php require_once("Proteccion.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +12,7 @@
 </head>
 
 <body>
-    <!-- Proteccion -->
-    <?php require_once("Proteccion.php"); ?>
+
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <div class="container mt-5">
@@ -23,7 +23,7 @@
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
-                    $resultado=mysqli_query($cn,"select * from receta");
+                    $resultado=mysqli_query($cn,"select nombreReceta from receta");
                     while($fila=mysqli_fetch_array($resultado))
                     {
                         echo"<td>* ".$fila['nombreReceta']."</td>";
@@ -35,7 +35,7 @@
             </div>
             <div class="col-6">
                 <div class="card text-white bg-success mb-3">
-                    <div class="card-header">Ultima Receta</div>
+                    <div class="card-header">Última Receta</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
@@ -51,12 +51,12 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <div class="card text-white bg-secondary mb-3">
+                <div class="card text-white bg-danger mb-3">
                     <div class="card-header">Paises Totales</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
-                    $resultado=mysqli_query($cn,"select * from pais");
+                    $resultado=mysqli_query($cn,"select nombrePais from pais");
                     while($fila=mysqli_fetch_array($resultado))
                     {
                         echo"<td>* ".$fila['nombrePais']."</td>";
@@ -67,12 +67,12 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="card text-dark bg-ligth mb-3">
+                <div class="card text-dark bg-warning mb-3">
                     <div class="card-header">Ingredientes Totales</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
-                    $resultado=mysqli_query($cn,"select * from ingrediente");
+                    $resultado=mysqli_query($cn,"select nombreIngrediente from ingrediente");
                     while($fila=mysqli_fetch_array($resultado))
                     {
                         echo"<td>* ".$fila['nombreIngrediente']."</td>";
@@ -83,7 +83,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <?php include_once("../layout/footer.php"); ?>

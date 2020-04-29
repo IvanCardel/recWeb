@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
   <a class="navbar-brand" href="#">Recetario</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,17 +9,20 @@
         <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="categorias.php"><i class="fas fa-home"></i> Categorias</a>
+        <a class="nav-link" href="categorias.php"><i class="fas fa-balance-scale"></i> Categoría</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pais.php"><i class="fas fa-home"></i> Pais</a>
+        <a class="nav-link" href="pais.php"><i class="fas fa-globe-americas"></i> País</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="recetas.php"><i class="fas fa-home"></i> Recetas</a>
+        <a class="nav-link" href="recetas.php"><i class="far fa-list-alt"></i> Recetas</a>
       </li>
       <li class="nav-item">
         <!-- Duda-->
-        <a class="nav-link" href="ingredientes.php"><i class="fas fa-home"></i> Ingredientes</a>
+        <a class="nav-link" href="ingredientes.php"><i class="fas fa-list-ol"></i> Ingredientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../index.php"><i class="far fa-hand-point-left"></i> Salir</a>
       </li>
     </ul>
   </div>

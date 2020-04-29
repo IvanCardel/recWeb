@@ -1,3 +1,4 @@
+<?php require_once("Proteccion.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +12,7 @@
 </head>
 
 <body>
-    <!-- Proteccion -->
-    <?php require_once("Proteccion.php") ?>
+    
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
