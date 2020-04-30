@@ -9,6 +9,116 @@
     font-size: 18px;
 }
 
+
+/* Base de footer */
+
 .foo {
     background-color: #1a237e;
+}
+
+
+/* Card ingredientes */
+
+.it {
+    background-color: #f4ff81;
+}
+
+
+/* nav adm */
+
+.nvbc {
+    background-color: #1c2a48;
+}
+
+
+/* cards head */
+
+.nvb1 {
+    background-color: #01579b;
+}
+
+.nvb2 {
+    background-color: #1b5e20;
+}
+
+.nvb3 {
+    background-color: #ff3d00;
+}
+
+.nvb4 {
+    background-color: #ffff00;
+}
+
+
+/* cards head */
+
+
+/* Cards ingredientes y paises */
+
+.cd {
+    background-color: #f44336;
+}
+
+.cu {
+    background-color: #76ff03;
+}
+
+
+/* imágen index */
+
+.bg {
+    /* coloco imagen*/
+    background-image: url("../image/fo.jpg");
+    /*background-image: url("https://www.gob.mx/cms/uploads/image/file/277131/YOUTUBE.jpg");*/
+    /*background-image: url("https://2.bp.blogspot.com/-Ngxn3yXZJGY/WrA1Bec-CuI/AAAAAAAALsA/kndIswnBDzQLYv0eglUcM6AyTcegKmV9wCK4BGAYYCw/s1600/Captura%2Bde%2Bpantalla%2B2018-03-19%2Ba%2Blas%2B4.05.56%2Bp.m..png");*/
+    /* img completa */
+    height: 100%;
+    /* centro */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.9;*/
+}
+
+.bg1 {
+    /* coloco imagen*/
+    background-image: url("../image/ing.jpg");
+    /*background-image: url("https://www.gob.mx/cms/uploads/image/file/277131/YOUTUBE.jpg");*/
+    /*background-image: url("https://2.bp.blogspot.com/-Ngxn3yXZJGY/WrA1Bec-CuI/AAAAAAAALsA/kndIswnBDzQLYv0eglUcM6AyTcegKmV9wCK4BGAYYCw/s1600/Captura%2Bde%2Bpantalla%2B2018-03-19%2Ba%2Blas%2B4.05.56%2Bp.m..png");*/
+    /* img completa */
+    height: 100%;
+    /* centro */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.9;*/
+}
+
+.bg2 {
+    /* coloco imagen*/
+    background-image: url("../image/pai.jpg");
+    /*background-image: url("https://www.gob.mx/cms/uploads/image/file/277131/YOUTUBE.jpg");*/
+    /*background-image: url("https://2.bp.blogspot.com/-Ngxn3yXZJGY/WrA1Bec-CuI/AAAAAAAALsA/kndIswnBDzQLYv0eglUcM6AyTcegKmV9wCK4BGAYYCw/s1600/Captura%2Bde%2Bpantalla%2B2018-03-19%2Ba%2Blas%2B4.05.56%2Bp.m..png");*/
+    /* img completa */
+    height: 100%;
+    /* centro */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.9;*/
+}
+
+
+/* card inicial */
+
+.cardini {
+    background-color: #ffffff;
+    opacity: .6;
+}
+
+
+/* Jumbotrom */
+
+.jb {
+    background-color: #2962ff;
 }

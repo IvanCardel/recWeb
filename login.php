@@ -17,7 +17,7 @@
     <?php include_once("layout/navbar.php"); ?>
     <!-- Contenido -->
     <div class="container pt-5">
-        <div class="jumbotron">
+        <div class="jumbotron  jb">
             <h1 class="display-4 text-center"> Ingresar
             </h1>
             <form class="form" id="login">

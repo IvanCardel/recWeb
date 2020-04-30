@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="bg1">
     
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
@@ -79,6 +80,7 @@
     <!-- Ventana Modal -->
     <div class="modal" role="dialog">
 
+    </div>
     </div>
     <!-- Footer -->
     <?php include_once("../layout/footer.php"); ?>

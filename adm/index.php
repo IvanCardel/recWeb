@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/datatables.min.css">
+    <link  rel="icon"   href="../image/go.ico"/>
     <title>Inicio</title>
 </head>
 
@@ -15,11 +16,14 @@
 
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
+
+    <!-- Contenido del index -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-6">
+                <!-- Card de total recetas -->
                 <div class="card text-white bg-primary mb-3">
-                    <div class="card-header">Total de Recetas</div>
+                    <div class="card-header nvb1">Total de Recetas</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
@@ -34,8 +38,9 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="card text-white bg-success mb-3">
-                    <div class="card-header">Última Receta</div>
+                <!-- Card de última receta -->
+                <div class="card text-white cu mb-3">
+                    <div class="card-header nvb2">Última Receta</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
@@ -51,8 +56,9 @@
         </div>
         <div class="row">
             <div class="col-6">
-                <div class="card text-white bg-danger mb-3">
-                    <div class="card-header">Paises Totales</div>
+                <!-- Card de paises totales -->
+                <div class="card text-white cd mb-3">
+                    <div class="card-header nvb3">Paises Totales</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
@@ -67,8 +73,9 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="card text-dark bg-warning mb-3">
-                    <div class="card-header">Ingredientes Totales</div>
+                <!-- Card de ingredientes totales -->
+                <div class="card text-dark it mb-3">
+                    <div class="card-header nvb4">Ingredientes Totales</div>
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
