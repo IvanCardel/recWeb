@@ -13,16 +13,17 @@
 </head>
 
 <body>
-
+<a name="index"></a>
+    <div class="bg4">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
-
     <!-- Contenido del index -->
     <div class="container mt-5">
+    <h1 class="text-light">Bienvenido</h1>
         <div class="row">
             <div class="col-6">
                 <!-- Card de total recetas -->
-                <div class="card text-white bg-primary mb-3">
+                <div class="card cardini2 text-white bg-primary mb-3">
                     <div class="card-header nvb1">Total de Recetas</div>
                     <div class="card-body">
                     <?php 
@@ -39,7 +40,7 @@
             </div>
             <div class="col-6">
                 <!-- Card de última receta -->
-                <div class="card text-white cu mb-3">
+                <div class="card cardini2 text-white cu mb-3">
                     <div class="card-header nvb2">Última Receta</div>
                     <div class="card-body">
                     <?php 
@@ -57,7 +58,7 @@
         <div class="row">
             <div class="col-6">
                 <!-- Card de paises totales -->
-                <div class="card text-white cd mb-3">
+                <div class="card cardini2 text-white cd mb-3">
                     <div class="card-header nvb3">Paises Totales</div>
                     <div class="card-body">
                     <?php 
@@ -74,7 +75,7 @@
             </div>
             <div class="col-6">
                 <!-- Card de ingredientes totales -->
-                <div class="card text-dark it mb-3">
+                <div class="card cardini2 text-white it mb-3">
                     <div class="card-header nvb4">Ingredientes Totales</div>
                     <div class="card-body">
                     <?php 
@@ -91,7 +92,7 @@
             </div>
         </div>
     </div>
-
+    </div>
     <?php include_once("../layout/footer.php"); ?>
 
     <script src="../js/jquery-3.1.1.js"></script>

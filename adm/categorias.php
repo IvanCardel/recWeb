@@ -17,6 +17,7 @@
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
     <div class="container pt-5">
+        <h1>Categorías</h1>
         <div class="jumbotron container" id="formulario" style="display:none">
         <h6 class="display-4 text-center">Alta Categoría</h6>
                  <!-- Aquí cambio el id del formulario país por el de categoría -->

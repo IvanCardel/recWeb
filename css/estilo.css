@@ -6,7 +6,13 @@
 .correoFooter:hover {
     text-decoration: none;
     color: #dbd3d3;
-    font-size: 18px;
+    font-size: 19px;
+}
+
+.cardini2 {
+    background-color: #ffffff;
+    opacity: .9;
+    font-size: 1.4rem;
 }
 
 
@@ -94,14 +100,20 @@
     /*opacity: 0.9;*/
 }
 
-.bg2 {
-    /* coloco imagen*/
-    background-image: url("../image/pai.jpg");
-    /*background-image: url("https://www.gob.mx/cms/uploads/image/file/277131/YOUTUBE.jpg");*/
-    /*background-image: url("https://2.bp.blogspot.com/-Ngxn3yXZJGY/WrA1Bec-CuI/AAAAAAAALsA/kndIswnBDzQLYv0eglUcM6AyTcegKmV9wCK4BGAYYCw/s1600/Captura%2Bde%2Bpantalla%2B2018-03-19%2Ba%2Blas%2B4.05.56%2Bp.m..png");*/
-    /* img completa */
+
+/* .bg2 {
+     coloco imagen
+ background-image: url("../image/pai.jpg"); 
+/height: 100%; 
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+opacity: 0.9;
+ } */
+
+.bg4 {
+    background-image: url("../image/ag.jpeg");
     height: 100%;
-    /* centro */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -120,5 +132,23 @@
 /* Jumbotrom */
 
 .jb {
-    background-color: #2962ff;
+    background-color: #1c2a48;
+}
+
+.te {
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    opacity: .9;
+}
+
+#ir {
+    font-size: 1.2rem;
+}
+
+.tocard {
+    background-color: #0091ea;
+}
+
+.letracard {
+    font-size: 1.3rem;
 }

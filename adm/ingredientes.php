@@ -17,7 +17,7 @@
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
-    <div class="container pt-5">
+    <div class="container te pt-5">
         <div class="jumbotron container" id="formulario" style="display:none">
         <!-- Alta ingredientes -->
         <h6 class="display-4 text-center">Alta Ingrediente</h6>

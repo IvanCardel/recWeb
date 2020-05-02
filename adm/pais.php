@@ -12,13 +12,14 @@
 </head>
 
 <body>
-    <div class="bg2">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
+    <div class="bg2">
     <div class="container pt-5">
+    <h1>Países</h1>
         <div class="jumbotron container" id="formulario" style="display:none">
-        <h6 class="display-4 text-center">Alta Pais</h6>
+        <h6 class="display-4 text-center">Alta País</h6>
             <form class="form" id="formularioPais">
                 <label for="nombrePais">Nombre : </label>
                 <input type="text" name="nombrePais" class="form-control">

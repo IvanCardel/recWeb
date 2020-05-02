@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<a name="index"></a>
 <div class="bg">
     <!--- Carrusel -->
     <?php include_once("layout/slide.php");?>

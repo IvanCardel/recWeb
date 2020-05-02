@@ -16,7 +16,7 @@
         <a class="nav-link" href="#"><i class="fas fa-globe-americas"></i> País</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-mobile-alt"></i> Contacto</a>
+        <a class="nav-link" href="#footer"><i class="fas fa-mobile-alt"></i> Contacto</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login.php"><i class="fas fa-user-shield"></i> Login</a>

@@ -30,8 +30,10 @@
         <ul class="list-unstyled" style="line-height: 2rem">
           <li class="text-light"><a href="tel:4612518801 text-light" class="correoFooter text-light"><i class="fas fa-phone mr-3 text-light"></i> + 52 461 451 88 01</a></li>
           <li class="text-light"><a href="mailto:correo1@dominio.ext" class="correoFooter text-light"><i class="fas fa-envelope-open-text"></i>&nbsp jics080493@gmail.com</a></li>
-          <li class="text-light"><a href="https://goo.gl/maps/kiyDfe7XywNSBqLFA" class="correoFooter text-light"><i class="fas fa-home mr-3"></i>Villa de Arango 102, Villas del Bajio I, 36020 Celaya, Gto.</a></li>
+          <li class="text-light"><a href="https://goo.gl/maps/kiyDfe7XywNSBqLFA" class="correoFooter text-light"><i class="fas fa-map-marker-alt"></i>&nbsp   Villa de Arango 102, Villas del Bajio I, 36020 Celaya, Gto.</a></li>
+          <li class="text-light"><a class="text-light correoFooter" id="ir" href="#index"><i class="fas fa-home mr-3"></i> Ir arriba</a></li>
         </ul>
+        <a name="footer"></a>
       </div>
     </div>
   </div>
