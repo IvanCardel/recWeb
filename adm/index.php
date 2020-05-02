@@ -17,6 +17,32 @@
     <div class="bg4">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
+
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
+            <div class="toast-header">
+                <div class="container">
+                    <img src="../image/ivn.jpg" class="img-thumbnail" alt="No found">
+                </div>
+                <strong class="mr-auto text-dark ">Recetario ha mandado un mensaje</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="toast-body letracard">
+                Bienvenido
+                <?php 
+                require_once("../conec.php");
+                $resultado=mysqli_query($cn,"select * from usuario");
+                if($fila=mysqli_fetch_array($resultado))
+                {
+                    echo"<td class=\"letracard\"> ".$fila['usr']."</td>";
+                }
+            ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenido del index -->
     <div class="container mt-5">
     <h1 class="text-light">Bienvenido</h1>
@@ -100,6 +126,14 @@
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/datatables.min.js"></script>
     <script src="../js/all.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".toast").toast("show");
+        });
+        $(".toast").toast({
+            delay: 4000
+        });
+    </script>
 </body>
 
 </html>

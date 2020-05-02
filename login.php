@@ -18,42 +18,43 @@
     <!-- Contenido -->
     <div class="container pt-5">
         <div class="jumbotron  jb">
-            <h1 class="display-4 text-center"> Ingresar
-            </h1>
+        <img src="image/login.png" style="max-width:15%;width:auto;height:auto" class="rounded mx-auto d-block"  alt="No found">
+            <h3 class="display-4 text-center text-primary"> Ingresar</h3>
             <form class="form" id="login">
                 <div class="container">
                     <!-- inicio input-->
                     <label class="sr-only" for="user"> Usuario</label>
-                    <div class="input-group">
+                    <div class="offset-2  input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <i class="fas fa-user fa-lg"></i>
                             </div>
                         </div>
-                        <input type="text" class="form-control col-form-label-lg" name="usuario" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control col-form-label-lg inputform" name="usuario" id="usuario" placeholder="Usuario">
                     </div>
                     <br>
                     <!-- termino input-->
                     <label class="sr-only" for="pass"> Contraseña</label>
-                    <div class="input-group">
+                    <div class="offset-2 input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <i class="fas fa-key fa-lg"></i>
                             </div>
                         </div>
-                        <input type="password" class="form-control col-form-label-lg" name="pass" id="pass" placeholder="Contraseña">
+                        <input type="password" class="form-control inputform col-form-label-lg" name="pass" id="pass" placeholder="Contraseña">
                         <br>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="offset-10 col-2">
+                        <div class="offset-8 col-xs-2 col-md-2">
                             <div class="btn btn-danger btn-block" id="mostrar"><i class="fas fa-eye"></i> Mostrar </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="offset-5 col-2">
-                            <input type="submit" value="Enviar" class="btn btn-primary btn-block" id="enviar">
+                        <div class="offset-5  col-xs-2 col-md-2">
+                            <input type="submit" value="Enviar" class="btn btn-success btn-block" id="enviar">
                         </div>
+                        <br>
                     </div>
                     <div class="row" id="mensaje"></div>
                 </div>
@@ -110,14 +111,14 @@
                 },
                 messages: {
                     usuario: {
-                        required: "el Usuario es requerido",
-                        maxlength: "debe ser maximo 10 caracteres ",
-                        minlength: "debe ser minimo 5 caracteres ",
+                        required: "El usuario es requerido",
+                        maxlength: "Debe contener máximo 10 caracteres ",
+                        minlength: "Debe contener mínimo 5 caracteres ",
                     },
                     pass: {
-                        required: "el Usuario es requerido ",
-                        maxlength: "debe ser maximo 10 caracteres ",
-                        minlength: "debe ser minimo 5 caracteres ",
+                        required: "La contraseña es requerida",
+                        maxlength: "Debe contener máximo 10 caracteres ",
+                        minlength: "Debe contener mínimo 5 caracteres ",
                     },
                 },
                 errorElement: "span",

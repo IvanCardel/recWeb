@@ -132,7 +132,7 @@ opacity: 0.9;
 /* Jumbotrom */
 
 .jb {
-    background-color: #1c2a48;
+    background-color: rgba(0, 150, 136, 0.3);
 }
 
 .te {
@@ -150,5 +150,12 @@ opacity: 0.9;
 }
 
 .letracard {
+    font-size: 1.3rem;
+}
+
+.inputform {
+    max-width: 65%;
+    width: auto;
+    height: auto;
     font-size: 1.3rem;
 }
