@@ -53,15 +53,15 @@
                                         <th>Cantidad</th>
                                     </tr>
                                 </thead>";
-                                // foreach ($resultado as $key => $fila)
-                                // {
+                                foreach ($resultado as $key => $fila)
+                                {
                                     echo"
                                     <tbody>
                                         <td class=\"card-text\">".$fila['nombreIngrediente']."</td>
                                         <td class=\"card-text\">".$fila['unidadMedida']."</td>
                                         <td class=\"card-text\">".$fila['cantidad']."</td>
                                     ";
-                                // }
+                                }
                                 echo"
                                 </tbody>
                             </table>
@@ -75,6 +75,7 @@
     ";
     }
     ?>
+    <br>
     </div>
         <!-- Codigo Footer -->
         <?php include_once("layout/footer.php");?>

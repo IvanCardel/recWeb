@@ -9,12 +9,40 @@
       <li class="nav-item">
         <a class="nav-link correoFooter" href="index.php"><i class="fas fa-home"></i> Inicio</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle correoFooter" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-globe-americas"></i> Categorías
+        </a>
+        <div class="dropdown-menu text-light bg-primary " aria-labelledby="navbarDropdown">
+        <?php
+          require_once("conec.php");
+            $resultado=mysqli_query($cn,"select * from categoria");
+          while($fila=mysqli_fetch_array($resultado)){
+              echo'<a class="dropdown-item correoFooter" href="recetaCategoria.php?idCategoria='.$fila['idCategoria'].' ">'.$fila["nombreCategoria"].'</a>';
+          }
+          ?>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
         <a class="nav-link correoFooter" href="#"><i class="fas fa-balance-scale"></i> Categoria</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle correoFooter" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-globe-americas"></i> País
+        </a>
+        <div class="dropdown-menu text-light bg-primary " aria-labelledby="navbarDropdown">
+        <?php
+          require_once("conec.php");
+            $resultado=mysqli_query($cn,"select * from pais");
+          while($fila=mysqli_fetch_array($resultado)){
+              echo'<a class="dropdown-item correoFooter" href="recetaPais.php?idPais='.$fila['idPais'].'">'.$fila["nombrePais"].'</a>';
+          }
+          ?>
+        </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link correoFooter" href="#"><i class="fas fa-globe-americas"></i> País</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link correoFooter" href="#footer"><i class="fas fa-mobile-alt"></i> Contacto</a>
       </li>
