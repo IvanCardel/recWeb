@@ -134,7 +134,7 @@ opacity: 0.9;
 
 .cardini {
     background-color: #ffffff;
-    opacity: .6;
+    opacity: .8;
 }
 
 
@@ -174,4 +174,13 @@ opacity: 0.9;
 
 .tituloPa {
     font-size: 8rem;
+}
+
+.as {
+    font-size: 1.3rem;
+}
+
+.tituloPa2 {
+    font-size: 8rem;
+    font-style: italic;
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,45 +11,47 @@
 </head>
 
 <body>
-    <a name="index"></a>
-   
-    <div class="bg">
+    <!-- Link para ir abajo -->
+<a name="index"></a>
+<!-- Fondo de imágen de la página -->
+<div class="bg">
     <!--- Carrusel -->
     <?php include_once("layout/slide.php");?>
-    <!-- navabar -->
+    <!-- Navabar -->
     <?php include_once("layout/navbar.php");?>
-<?php
+    <!-- Aquí genero el card donde muestro únicamente la receta seleccionada en el index -->
+    <?php
     require_once("conec.php");
-    $idCategoria = $_GET["idCategoria"];
-    $res=mysqli_query($cn,"SELECT  nombreCategoria from categoria where idCategoria = $idCategoria");
+    $idReceta = $_GET["idReceta"];
+    // Si pasa el idReceta
+    // echo$idReceta;
+    // Consulta que me regresa los datos de la receta seleccionada
     $resultado=mysqli_query($cn,"SELECT 
     rec.nombreReceta, cat.nombreCategoria, rec.fecha, pa.nombrePais, 
     ing.nombreIngrediente, ing.unidadMedida, deting.cantidad, rec.instrucciones 
     from 
-    receta rec inner join detalleingrediente deting ON (rec.idReceta = deting.idReceta) 
+    receta rec 
+    inner join detalleingrediente deting ON (rec.idReceta = deting.idReceta) 
     inner join ingrediente ing on (ing.idIngrediente = deting.idIngrediente) 
     inner join categoria cat on (cat.idCategoria = rec.idCategoria) 
-    inner join pais pa on (pa.idPais = rec.idPais) where cat.idCategoria = $idCategoria ");
-    // Hacemos el barrido de la consulta 
-    echo"<div class=\"container\">";
-    if($fil=mysqli_fetch_array($res))
-        echo"<h1  class=\"text-center tituloPa2 text-warning\">~ ".$fil['nombreCategoria']." ~</h1>
-        <br>
-    </div>";
-
+    inner join pais pa on (pa.idPais = rec.idPais) where rec.idReceta = $idReceta");
+    // Aquí el while se encarga de hacer el recorrido de la receta seleccionada y lo muestra en el card
     while($fila=mysqli_fetch_array($resultado)){
         //Card con el contenido de la base de datos 
         echo"
         <div class=\"container\">
-            <div class=\"card cardini mt-4\">
+            <div class=\"card cardini as mt-4\">
                 <div class=\"card-body\">
                     <div class=\"row\">
                         <div class=\"col-6\">
                             <tr>
-                                <td><h5>Receta: ".$fila['nombreReceta']."</h5></td>
-                                <td><h6 class=\"card-subtittle mb-2 text-muted\">Categoría: ".$fila['nombreCategoria']."</h6></td>
-                                <td class=\"card-text\">Fecha: ".$fila['fecha']."</td>
-                                <td class=\"card-text\">País: ".$fila['nombrePais']."</td>            
+                            <td><h2>Receta: ".$fila['nombreReceta']."</h2></td>
+                            <td><h3 class=\"card-subtittle mb-2 text-muted\">Categoría: ".$fila['nombreCategoria']."</h3></td>
+                            <td class=\"card-text\">Fecha: ".$fila['fecha']."</td>
+                            <br>
+                            <td class=\"card-text\">País: ".$fila['nombrePais']."</td>
+                            <br>
+                            <td> 
                                 <table class=\"table mt-1\">
                                     <thead>
                                         <tr>
@@ -58,6 +60,7 @@
                                             <th>Cantidad</th>
                                         </tr>
                                     </thead>";
+                                    // Barrido de los ingredientes para llenar la tabla
                                     foreach ($resultado as $key => $fila)
                                     {
                                         echo"
@@ -78,16 +81,16 @@
             </div>
         </div>";
     }
-?>
+    ?>
     <br>
     </div>
-    <!-- Codigo Footer -->
-    <?php include_once("layout/footer.php");?>
-    <!-- js -->
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/all.min.js"></script>
+        <!-- Codigo Footer -->
+        <?php include_once("layout/footer.php");?>
+        <!-- js -->
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/all.min.js"></script>
 </body>
-    
+
 </html>

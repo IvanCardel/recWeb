@@ -34,7 +34,7 @@
     // Hacemos el barrido de la consulta 
     echo"<div class=\"container\">";
     if($fil=mysqli_fetch_array($res))
-        echo"<h1  class=\"text-white text-center tituloPa\"> ".$fil['nombrePais']." </h1>
+        echo"<h1  class=\"text-center tituloPa2 text-warning\">~ ".$fil['nombrePais']." ~</h1>
         <br>
     </div>";
 
