@@ -19,7 +19,7 @@
     <div class="container pt-5">
         <h1>Categorías</h1>
         <div class="jumbotron container" id="formulario" style="display:none">
-        <h6 class="display-4 text-center">Alta Categoría</h6>
+        <h6 class="display-4 text-center">Agregar Categoría</h6>
                  <!-- Aquí cambio el id del formulario país por el de categoría -->
             <form class="form" id="formularioCategoria">
                 <!-- C-->
@@ -60,7 +60,7 @@
                 //C
                 echo"<td>".$fila['nombreCategoria']."</td>";
                 //C
-                echo"<td><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></td>";
+                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
             echo"</tr>";
         }
     ?>

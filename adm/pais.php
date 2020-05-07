@@ -19,7 +19,7 @@
     <div class="container pt-5">
     <h1>Países</h1>
         <div class="jumbotron container" id="formulario" style="display:none">
-        <h6 class="display-4 text-center">Alta País</h6>
+        <h6 class="display-4 text-center">Agregar País</h6>
             <form class="form" id="formularioPais">
                 <label for="nombrePais">Nombre : </label>
                 <input type="text" name="nombrePais" class="form-control">
@@ -50,7 +50,7 @@
             echo"<tr>";
                 echo"<td>".$fila['idPais']."</td>";
                 echo"<td>".$fila['nombrePais']."</td>";
-                echo"<td><div class='btn btn-success editar' data-id='".$fila['idPais']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idPais']."'><i class='fas fa-trash'></i> Eliminar</div></td>";
+                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idPais']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idPais']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
             echo"</tr>";
         }
     ?>

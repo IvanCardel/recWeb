@@ -20,7 +20,7 @@
     <div class="container te pt-5">
         <div class="jumbotron container" id="formulario" style="display:none">
         <!-- Alta ingredientes -->
-        <h6 class="display-4 text-center">Alta Ingrediente</h6>
+        <h6 class="display-4 text-center">Agregar Ingrediente</h6>
                  <!-- Aquí cambio el id del formulario país por el de ingrediente-->
             <form class="form" id="formularioIngrediente">
                 <!-- C agregar nombre de ingrediente-->
@@ -69,7 +69,7 @@
                 //C Agregamos unidad de medida 
                 echo"<td>".$fila['unidadMedida']."</td>";
                 //C UdM 
-                echo"<td><div class='btn btn-success editar' data-id='".$fila['idIngrediente']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idIngrediente']."'><i class='fas fa-trash'></i> Eliminar</div></td>";
+                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idIngrediente']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idIngrediente']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
             echo"</tr>";
         }
     ?>
