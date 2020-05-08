@@ -18,7 +18,7 @@
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
 
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
         <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
             <div class="toast-header">
                 <div class="container">
@@ -31,7 +31,7 @@
             </div>
             <div class="toast-body letracard">
                 Bienvenido
-                <?php 
+            <?php 
                 require_once("../conec.php");
                 $resultado=mysqli_query($cn,"select * from usuario");
                 if($fila=mysqli_fetch_array($resultado))
@@ -41,11 +41,11 @@
             ?>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Contenido del index -->
     <div class="container mt-5">
-    <h1 class="text-light">Bienvenido</h1>
+    <h1 class="text-light text-center">Bienvenido</h1>
         <div class="row">
             <div class="col-6">
                 <!-- Card de total recetas -->

@@ -12,13 +12,14 @@
 </head>
 
 <body>
+    <!-- Imágen de fondo -->
     <div class="bg1">
-    
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
     <div class="container te pt-5">
-        <div class="jumbotron container" id="formulario" style="display:none">
+    <h1>Ingredientes</h1>
+        <div class="jumbotron container bg-primary" id="formulario" style="display:none">
         <!-- Alta ingredientes -->
         <h6 class="display-4 text-center">Agregar Ingrediente</h6>
                  <!-- Aquí cambio el id del formulario país por el de ingrediente-->

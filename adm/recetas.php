@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/datatables.min.css">
-    <title>Recetario</title>
+    <title>Recetas</title>
 </head>
 
 <body>
@@ -16,12 +16,12 @@
     <!-- Contenido -->
     <body>
     <div class="bg1">
-    
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
     <div class="container te pt-5">
-        <div class="jumbotron container" id="formulario" style="display:none">
+    <h1>Recetas</h1>
+        <div class="jumbotron container bg-primary" id="formulario" style="display:none">
         <!-- Alta Receta -->
         <h6 class="display-4 text-center">Agregar Receta</h6>
                  <!-- idReceta-->
@@ -267,6 +267,7 @@
             $("#formulario").toggle("slow");
         });
     </script>
+    
 </body>
 
 </html>

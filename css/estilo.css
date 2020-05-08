@@ -109,19 +109,30 @@
     /*opacity: 0.9;*/
 }
 
-
-/* .bg2 {
-     coloco imagen
- background-image: url("../image/pai.jpg"); 
-/height: 100%; 
-background-position: center;
+.bg2 {
+    /* coloco imagen */
+    background-image: url("../image/pai.jpg");
+    height: 100%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
-opacity: 0.9;
- } */
+    background-size: cover;
+    opacity: 0.9;
+}
 
 .bg4 {
     background-image: url("../image/ag.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+
+/* Categoría */
+
+.bg5 {
+    background-image: url("../image/cat.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -183,4 +194,8 @@ opacity: 0.9;
 .tituloPa2 {
     font-size: 8rem;
     font-style: italic;
+}
+
+.bordeBot {
+    /* border-color: black; */
 }

@@ -16,57 +16,59 @@
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <!-- Contenido -->
-    <div class="container pt-5">
-        <h1>Categorías</h1>
-        <div class="jumbotron container" id="formulario" style="display:none">
-        <h6 class="display-4 text-center">Agregar Categoría</h6>
-                 <!-- Aquí cambio el id del formulario país por el de categoría -->
-            <form class="form" id="formularioCategoria">
-                <!-- C-->
-                <label for="nombreCategoria">Nombre : </label>
-                 <!-- C-->
-                <input type="text" name="nombreCategoria" class="form-control">
-                <hr>
-                <input type="hidden" name="accion" value="insertar">
-                 <!-- C-->
-                <input type="button" class="btn btn-primary" id="insertar" value="Agregar Categoria">
-            </form>
-        </div>
-        <div class="row">
-            <div class="offset-8 col-2">
-                 <!-- C-->
-                <div class="btn btn-primary btn-block" id="agregaCategoria">
-                    <i class="fas fa-plus"></i> Agregar</div>
+    <div class="bg5">
+        <div class="container te pt-5">
+            <h1>Categorías</h1>
+            <div class="jumbotron container bg-primary" id="formulario" style="display:none">
+            <h6 class="display-4 text-center">Agregar Categoría</h6>
+                     <!-- Aquí cambio el id del formulario país por el de categoría -->
+                <form class="form" id="formularioCategoria">
+                    <!-- C-->
+                    <label for="nombreCategoria">Nombre : </label>
+                     <!-- C-->
+                    <input type="text" name="nombreCategoria" class="form-control">
+                    <hr>
+                    <input type="hidden" name="accion" value="insertar">
+                     <!-- C-->
+                    <input type="button" class="btn btn-primary bordeBot" id="insertar" value="Agregar Categoria">
+                </form>
             </div>
-        </div>
-         <!-- C-->
-        <table class="table mt-1" id="tablaCategoria">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-        require_once("../conec.php");
-        // C
-        $resultado=mysqli_query($cn,"select * from categoria");
-        while($fila=mysqli_fetch_array($resultado)){
-            echo"<tr>";
-                //C
-                echo"<td>".$fila['idCategoria']."</td>";
-                //C
-                echo"<td>".$fila['nombreCategoria']."</td>";
-                //C
-                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
-            echo"</tr>";
-        }
-    ?>
-            </tbody>
-        </table>
+            <div class="row">
+                <div class="offset-8 col-2">
+                     <!-- C-->
+                    <div class="btn btn-primary btn-block" id="agregaCategoria">
+                        <i class="fas fa-plus"></i> Agregar</div>
+                </div>
+            </div>
+             <!-- C-->
+            <table class="table mt-1" id="tablaCategoria">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+            require_once("../conec.php");
+            // C
+            $resultado=mysqli_query($cn,"select * from categoria");
+            while($fila=mysqli_fetch_array($resultado)){
+                echo"<tr>";
+                    //C
+                    echo"<td>".$fila['idCategoria']."</td>";
+                    //C
+                    echo"<td>".$fila['nombreCategoria']."</td>";
+                    //C
+                    echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
+                echo"</tr>";
+            }
+        ?>
+                </tbody>
+            </table>
 
+        </div>
     </div>
     <!-- Ventana Modal -->
     <div class="modal" role="dialog">
