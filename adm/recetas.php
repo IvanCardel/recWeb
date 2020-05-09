@@ -21,7 +21,7 @@
     <!-- Contenido -->
     <div class="container te pt-5">
     <h1>Recetas</h1>
-        <div class="jumbotron container bg-primary" id="formulario" style="display:none">
+        <div class="jumbotron container bg-primary" id="formulario" style="display:none" enctype="multipart/form-data">
         <!-- Alta Receta -->
         <h6 class="display-4 text-center">Agregar Receta</h6>
                  <!-- idReceta-->
@@ -59,10 +59,10 @@
                         $resultado=mysqli_query($cn,"select * from usuario");
                         // Armamos el select
                         echo"<div class=\"form-group\">
-                            <label for=\"idiUsr\">Usuario</label>
-                            <select class=\"form-control\" id=\"exampleFormControlSelect1\">";
+                            <label for=\"idUsr\">Usuario</label>
+                            <select class=\"form-control\" name=\"idUsr\" id=\"idUsr\">";
                         while($fila=mysqli_fetch_array($resultado)){  
-                            echo "<option value='".$fila['idUsr']."'>".$fila['usr']."</option>";
+                            echo "<option value='".$fila['idUsr']."'>     ".$fila['usr']."</option>";
                         }
                             echo"</select>
                         </div>";
@@ -77,7 +77,7 @@
                         // Armamos el select
                         echo"<div class=\"form-group\">
                             <label for=\"idCategoria\">Categoría</label>
-                            <select class=\"form-control\" id=\"exampleFormControlSelect1\">";
+                            <select class=\"form-control\" name=\"idCategoria\" id=\"idCategoria\">";
                         while($fila=mysqli_fetch_array($resultado)){  
                             echo "<option value='".$fila['idCategoria']."'>".$fila['nombreCategoria']."</option>";
                         }
@@ -88,7 +88,7 @@
                         <!-- Agregar foto-->
                         <div class="form-group">
                             <label for="foto">Foto</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="text" class="form-control-file" name="foto" id="foto">
                         </div>
 
                         <!-- Carga datos de la país -->
@@ -100,20 +100,17 @@
                         // Armamos el select
                         echo"<div class=\"form-group\">
                             <label for=\"idPais\">País</label>
-                            <select class=\"form-control\" id=\"exampleFormControlSelect1\">";
+                            <select class=\"form-control\" name=\"idPais\" id=\"idPais\">";
                         while($fila=mysqli_fetch_array($resultado)){  
                             echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
                         }
                             echo"</select>
                         </div>";
                         ?>
-
                         <!-- Cierra columna derecha -->
                     </div>
                 <!-- Cierra la grid -->
                 </div>
-
-
                 <hr>
                 <input type="hidden" name="accion" value="insertar">
                  <!-- C-->
@@ -216,8 +213,7 @@
         $(".borrar").on("click",function(){
             //C
             var receta={
-                //C
-                idreceta:$(this).data("id"),
+                idReceta:$(this).data("id"),
                 accion:"borrar",
             };
             $.ajax({
@@ -235,11 +231,11 @@
         //editar una receta
         $(".editar").on("click",function(){
             //C
-            var idreceta=$(this).data("id");
+            var idReceta=$(this).data("id");
             //C
-            console.log(idreceta);
+            console.log(idReceta);
             //C
-            $(".modal").load("modalReceta.php",{"accion":"editar","idReceta":idreceta});
+            $(".modal").load("modalReceta.php",{"accion":"editar","idReceta":idReceta});
             $(".modal").modal();
 
         });
@@ -261,7 +257,7 @@
             });
         });
 
-        //boton agregar ingrediente
+        
         //C
         $("#agregaReceta").on("click",function(){
             $("#formulario").toggle("slow");
