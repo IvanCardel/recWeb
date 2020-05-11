@@ -28,6 +28,7 @@
             <br>
             <!--C-->
             <input type="button" class="btn btn-primary" value="Editar Categoria" id="botonEditar">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
     </div>

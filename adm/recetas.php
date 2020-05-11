@@ -23,7 +23,7 @@
     <h1>Recetas</h1>
         <div class="jumbotron container bg-primary" id="formulario" style="display:none" enctype="multipart/form-data">
         <!-- Alta Receta -->
-        <h6 class="display-4 text-center">Agregar Receta</h6>
+        <h6 class="display-4 text-center">Paso 1 de 2</h6>
                  <!-- idReceta-->
             <form class="form" id="formularioReceta">
                 <!-- Abre la grid de 12 -->
@@ -43,7 +43,8 @@
                         <!-- Agregar fecha-->
                         <label for="fecha">Fecha : </label>
                          <!-- entrada fecha-->
-                        <input type="date" name="fecha" class="form-control">
+                         
+                        <input type="date" name="fecha" class="form-control" >
 
                     <!-- Cierra la columna izquierda -->
                     </div>
@@ -114,14 +115,14 @@
                 <hr>
                 <input type="hidden" name="accion" value="insertar">
                  <!-- C-->
-                <input type="button" class="btn btn-primary" id="insertar" value="Agregar Receta">
+                <input type="button" class="btn btn-primary" id="insertar" value="Agregar Ingredientes">
             </form>
         </div>
         <div class="row">
             <div class="offset-8 col-2">
                  <!-- C-->
                 <div class="btn btn-primary btn-block" id="agregaReceta">
-                    <i class="fas fa-plus"></i> Agregar</div>
+                    <i class="fas fa-plus"></i> Agregar Recetas</div>
             </div>
         </div>
          <!-- C-->
@@ -252,7 +253,7 @@
                 data: parametros,
                 success: function(){
                     //C
-                    window.location.replace("recetas.php");
+                    window.location.assign("detalleIngrediente.php");
                 }
             });
         });

@@ -58,9 +58,9 @@
         </table>
     </div>
     <!-- Ventana Modal -->
-    <div class="modal" role="dialog">
-
+    
     </div>
+    <div class="modal" role="dialog">
     </div>
     <!-- Footer -->
     <?php include_once("../layout/footer.php"); ?>

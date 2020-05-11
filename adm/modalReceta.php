@@ -52,10 +52,12 @@
                         // Requerimos conección a la DB
                         require_once("../conec.php");
                         // Query para traer los datos del usuario
-                        $resultado=mysqli_query($cn,"select * from usuario where idUsr = $idU");
+                        $resultado=mysqli_query($cn,"select * from usuario");
+                        $res=mysqli_query($cn,"select * from usuario where idUsr = $idU");
                         // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idUsr\">Usuario</label>
+                        echo"<div class=\"form-group\">";
+                        if($fil=mysqli_fetch_array($res))  
+                            echo"<label for=\"idUsr\">Usuario: ".$fil['usr']."</label>
                             <select class=\"form-control\" name=\"idUsr\" id=\"idUsr\">";
                         while($fila=mysqli_fetch_array($resultado)){  
                             echo "<option value='".$fila['idUsr']."'>     ".$fila['usr']."</option>";
@@ -69,10 +71,12 @@
                         // Requerimos conección a la DB
                         require_once("../conec.php");
                         // Query para traer los datos de la categoría
-                        $resultado=mysqli_query($cn,"select * from categoria where idCategoria = $idCate");
+                        $resultado=mysqli_query($cn,"select * from categoria ");
+                        $res=mysqli_query($cn,"select * from categoria where idCategoria = $idCate");
                         // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idCategoria\">Categoría</label>
+                        echo"<div class=\"form-group\">";
+                        if($fil=mysqli_fetch_array($res))  
+                            echo"<label for=\"idCategoria\">Categoría: ".$fil['nombreCategoria']."</label>
                             <select class=\"form-control\" name=\"idCategoria\" id=\"idCategoria\">";
                         while($fila=mysqli_fetch_array($resultado)){  
                             echo "<option value='".$fila['idCategoria']."'>".$fila['nombreCategoria']."</option>";
@@ -92,10 +96,13 @@
                         // Requerimos conección a la DB
                         require_once("../conec.php");
                         // Query para traer los datos del país
-                        $resultado=mysqli_query($cn,"select * from pais where idPais=$idPa");
+                        $resultado=mysqli_query($cn,"select * from pais");
+                        $res=mysqli_query($cn,"select * from pais where idPais=$idPa");
+                        
                         // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idPais\">País</label>
+                        echo"<div class=\"form-group\">";
+                        if($fil=mysqli_fetch_array($res))
+                            echo"<label for=\"idPais\">País: ".$fil['nombrePais']."</label>
                             <select class=\"form-control\" name=\"idPais\" id=\"idPais\">";
                         while($fila=mysqli_fetch_array($resultado)){  
                             echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
@@ -110,8 +117,10 @@
            
 
             <br>
-            <!--C-->
+            <!--Editar -->
             <input type="button" class="btn btn-primary" value="Editar Receta" id="botonEditar">
+            <!--Btn Cancelar -->
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
     </div>

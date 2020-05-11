@@ -20,6 +20,7 @@
             <input type="text" name="nombrePais" value="<?php echo$nomPais ?>" class="form-control">
             <br>
             <input type="button" class="btn btn-primary" value="Editar Pais" id="botonEditar">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
     </div>
