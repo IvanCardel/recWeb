@@ -6,6 +6,9 @@
     }
     require_once("conec.php");
 	$result=mysqli_query($cn,"SELECT * FROM usuario WHERE usr='$usuario' AND pwd='$pass'");
+	while($row=mysqli_fetch_array($result)){
+		$_SESSION['usuario']=$row['nombreUsr'];
+	}
 	$s=$result->num_rows;
 	if($s==1){
 		$_SESSION['permiso']='si';

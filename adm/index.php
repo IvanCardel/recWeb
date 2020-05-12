@@ -17,8 +17,8 @@
     <div class="bg4">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
-
-    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+    <h1 class="text-light text-center">Bienvenido</h1>
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
         <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
             <div class="toast-header">
                 <div class="container">
@@ -31,21 +31,19 @@
             </div>
             <div class="toast-body letracard">
                 Bienvenido
-            <?php 
-                require_once("../conec.php");
-                $resultado=mysqli_query($cn,"select * from usuario");
-                if($fila=mysqli_fetch_array($resultado))
+                <?php
+                if(!isset($_SESSION))
                 {
-                    echo"<td class=\"letracard\"> ".$fila['usr']."</td>";
-                }
-            ?>
+                    session_start();
+                } 
+                echo "<td class=\"letracard\"> ".$_SESSION["usuario"]."</td>";
+                ?>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- Contenido del index -->
     <div class="container mt-5">
-    <h1 class="text-light text-center">Bienvenido</h1>
         <div class="row">
             <div class="col-6">
                 <!-- Card de total recetas -->

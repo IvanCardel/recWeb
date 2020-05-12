@@ -40,18 +40,16 @@
                          <!-- entrada instrucciones-->
                         <textarea type="text" name="instrucciones" class="form-control"></textarea>
 
+                        <div class="auto" id="auto" style="display: none">
                         <!-- Agregar fecha-->
                         <label for="fecha">Fecha : </label>
-                         <!-- entrada fecha-->
-                         
-                        <input type="date" name="fecha" class="form-control" >
-
+                        <!-- <input type="date" name="fecha" class="form-control" > -->
+                        <input class="form-control" type="date" name="fecha" step="1"  value="<?php echo date("Y-m-d");?>">
                     <!-- Cierra la columna izquierda -->
-                    </div>
-
-                    <!-- Abre columna derecha -->
-                    <div class="col-6">
-
+                        </div>
+                        <div class="form-group">
+                            <label for="idUsr">Usuario</label>
+                            <select class="form-control" name="idUsr" id="idUsr">";
                         <!-- Carga datos del usuario -->
                         <?php
                         // Requerimos conección a la DB
@@ -59,55 +57,55 @@
                         // Query para traer los datos del usuario
                         $resultado=mysqli_query($cn,"select * from usuario");
                         // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idUsr\">Usuario</label>
-                            <select class=\"form-control\" name=\"idUsr\" id=\"idUsr\">";
                         while($fila=mysqli_fetch_array($resultado)){  
-                            echo "<option value='".$fila['idUsr']."'>     ".$fila['usr']."</option>";
+                            echo "<option value='".$fila['idUsr']."'> ".$fila['usr']."</option>";
                         }
                             echo"</select>
                         </div>";
                         ?>
+                    </div>
 
-                        <!-- Carga datos de la categoría -->
-                        <?php
-                        // Requerimos conección a la DB
-                        require_once("../conec.php");
-                        // Query para traer los datos de la categoría
-                        $resultado=mysqli_query($cn,"select * from categoria");
-                        // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idCategoria\">Categoría</label>
-                            <select class=\"form-control\" name=\"idCategoria\" id=\"idCategoria\">";
-                        while($fila=mysqli_fetch_array($resultado)){  
-                            echo "<option value='".$fila['idCategoria']."'>".$fila['nombreCategoria']."</option>";
-                        }
-                            echo"</select>
-                        </div>";
-                        ?>
-
+                    <!-- Abre columna derecha -->
+                    <div class="col-6">
+                    <!-- Categoría -->
+                        <div class="form-group">
+                            <label for="idCategoria">Categoría</label>
+                            <select class="form-control" name="idCategoria" id="idCategoria">";
+                            <!-- Carga datos de la categoría -->
+                            <?php
+                            // Requerimos conección a la DB
+                            require_once("../conec.php");
+                            // Query para traer los datos de la categoría
+                            $resultado=mysqli_query($cn,"select * from categoria");
+                            // Armamos el select
+                            while($fila=mysqli_fetch_array($resultado)){  
+                                echo "<option value='".$fila['idCategoria']."'>".$fila['nombreCategoria']."</option>";
+                            }
+                            ?>
+                            </select>
+                        </div>                        
                         <!-- Agregar foto-->
                         <div class="form-group">
                             <label for="foto">Foto</label>
                             <input type="text" class="form-control-file" name="foto" id="foto">
                         </div>
-
-                        <!-- Carga datos de la país -->
-                        <?php
-                        // Requerimos conección a la DB
-                        require_once("../conec.php");
-                        // Query para traer los datos del país
-                        $resultado=mysqli_query($cn,"select * from pais");
-                        // Armamos el select
-                        echo"<div class=\"form-group\">
-                            <label for=\"idPais\">País</label>
-                            <select class=\"form-control\" name=\"idPais\" id=\"idPais\">";
-                        while($fila=mysqli_fetch_array($resultado)){  
-                            echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
-                        }
-                            echo"</select>
-                        </div>";
-                        ?>
+                        <!-- País -->
+                        <div class="form-group">
+                            <label for="idPais">País</label>
+                            <select class="form-control" name="idPais" id="idPais">
+                            <!-- Carga datos de la país -->
+                            <?php
+                            // Requerimos conección a la DB
+                            require_once("../conec.php");
+                            // Query para traer los datos del país
+                            $resultado=mysqli_query($cn,"select * from pais");
+                            // Armamos el select
+                            while($fila=mysqli_fetch_array($resultado)){  
+                                echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
+                            }
+                            ?>
+                            </select>
+                        </div>
                         <!-- Cierra columna derecha -->
                     </div>
                 <!-- Cierra la grid -->
