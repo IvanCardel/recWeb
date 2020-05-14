@@ -34,14 +34,7 @@
             <tbody>
     <?php 
         require_once("../conec.php");
-
-        $resultado=mysqli_query($cn,"SELECT *
-        FROM ingrediente ");
-        // t1
-        // WHERE NOT EXISTS (SELECT NULL
-        //                    FROM receta t2
-        //                   WHERE t2.idReceta = t1.idIngrediente)");
-
+        $resultado=mysqli_query($cn,"SELECT * FROM ingrediente ");
         while($fila=mysqli_fetch_array($resultado)){
             echo"<tr>";
                 echo"<td>".$fila['idIngrediente']."</td>";

@@ -18,7 +18,7 @@
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
     <h1 class="text-light text-center">Bienvenido</h1>
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
         <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
             <div class="toast-header">
                 <div class="container">
@@ -40,7 +40,7 @@
                 ?>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Contenido del index -->
     <div class="container mt-5">

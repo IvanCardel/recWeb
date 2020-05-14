@@ -21,11 +21,15 @@
     <?php include_once("layout/navbar.php");?>
     <!-- Aquí genero el card donde muestro únicamente la receta seleccionada en el index -->
     <?php
+    // Requerimos conexión a la vase de datos
     require_once("conec.php");
+    // Obtenemos el id para poder identificar la receta que queremos mostrar.
     $idReceta = $_GET["idReceta"];
     // Si pasa el idReceta
     // echo$idReceta;
-    // Consulta que me regresa los datos de la receta seleccionada
+    // Consulta que me regresa los datos de la receta seleccionada, este es una consulta más detallada,
+    // ya que cuenta con la información de 5 tablas unidas por inner join.
+    // la condición es que obtenga los datos de la receta cuyo id obtenemos por el método get.
     $resultado=mysqli_query($cn,"SELECT 
     rec.nombreReceta, cat.nombreCategoria, rec.fecha, pa.nombrePais, 
     ing.nombreIngrediente, ing.unidadMedida, deting.cantidad, rec.instrucciones 
@@ -37,7 +41,9 @@
     inner join pais pa on (pa.idPais = rec.idPais) where rec.idReceta = $idReceta");
     // Aquí el while se encarga de hacer el recorrido de la receta seleccionada y lo muestra en el card
     while($fila=mysqli_fetch_array($resultado)){
-        //Card con el contenido de la base de datos 
+        //Card con el contenido de la base de datos, obtiene lo necesario para mostrar todo lo requerido por una 
+        // Receta, en la parte de los ingredientes , ocupamos un foreach para mostrar los datos de una 
+        // manera ordenada,
         echo"
         <div class=\"container\">
             <div class=\"card cardini as mt-4\">

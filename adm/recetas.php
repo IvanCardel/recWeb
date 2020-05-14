@@ -127,14 +127,12 @@
         <table class="table mt-1" id="tablaReceta">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Nombre Receta</th>
-                    <th>Instrucciones</th>
-                    <th>Fecha</th>
-                    <th>Usr.</th>
-                    <th>Cat.</th>
+                  
                     <th>Foto</th>
+                    <th>Receta</th>
+                    <th>Categoría</th>
                     <th>Pais</th>
+                    <th>Fecha</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -142,29 +140,18 @@
                 <?php 
         require_once("../conec.php");
         // C
-        $resultado=mysqli_query($cn,"select * from receta");
+        $resultado=mysqli_query($cn,"SELECT idReceta, foto, nombreCategoria, nombrePais, nombreReceta, fecha FROM receta R LEFT JOIN pais P ON (R.idPais = P.idPais) LEFT JOIN categoria C ON (R.idCategoria=C.idCategoria)");
         while($fila=mysqli_fetch_array($resultado)){
             echo"<tr>";
-                // id Receta
-                echo"<td>".$fila['idReceta']."</td>";
-                // nombre Receta
-                echo"<td>".$fila['nombreReceta']."</td>";
-                // instrucciones
-                echo"<td>".$fila['instrucciones']."</td>";
-                // fecha
-                echo"<td>".$fila['fecha']."</td>";
-                // id usuario
-                echo"<td>".$fila['idUsr']."</td>";
-                // id categoría
-                echo"<td>".$fila['idCategoria']."</td>";
-                // foto
-                echo"<td>".$fila['foto']."</td>";
-                // id pais
-                echo"<td>".$fila['idPais']."</td>";
-                // Acciones
-                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idReceta']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idReceta']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
-            echo"</tr>";
-        }
+            
+            echo"<td><img src='../image/receta".$fila['foto']."' width='60px'></td>";
+            echo"<td>".$fila['nombreReceta']."</td>";
+            echo"<td>".$fila['nombreCategoria']."</td>";
+            echo"<td>".$fila['nombrePais']."</td>";
+            echo"<td>".$fila['fecha']."</td>";
+            echo"<td><div class=\"container\"><div class='btn btn-primary editar' data-id='".$fila['idReceta']."'><i class='fas fa-pen'></i> Editar Ingredientes</div> <div class='btn btn-success editar' data-id='".$fila['idReceta']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idReceta']."'><i class='fas fa-trash'></i> Eliminar</div><div></td>";
+        echo"</tr>";
+    }
     ?>
             </tbody>
         </table>

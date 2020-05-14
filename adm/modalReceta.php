@@ -72,7 +72,7 @@
                 <!-- Agregar foto-->
                 <div class="form-group">
                     <label for="foto">Foto</label>
-                    <input type="file" class="form-control-file" name="foto" id="foto" value="<?php echo$fot ?>">
+                    <input type="foto" class="form-control-file" name="foto" id="foto" value="<?php echo$fot ?>">
                 </div>
                 <!-- Carga datos de la país -->
                 <?php
