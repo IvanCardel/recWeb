@@ -36,21 +36,7 @@
                 <!-- Agregar fecha-->
                 <label for="fecha"></label>
                 <input type="hidden" name="fecha" class="form-control" value="<?php echo$fech ?>">
-                <!-- Carga datos del usuario -->
-                <?php
-                require_once("../conec.php");
-                $resultado=mysqli_query($cn,"select * from usuario");
-                $res=mysqli_query($cn,"select * from usuario where idUsr = $idU");
-                echo"<div class=\"form-group\">";
-                if($fil=mysqli_fetch_array($res))  
-                    echo"<label for=\"idUsr\">Usuario: ".$fil['usr']."</label>
-                    <select class=\"form-control\" name=\"idUsr\" id=\"idUsr\">";
-                while($fila=mysqli_fetch_array($resultado)){  
-                    echo "<option value='".$fila['idUsr']."'>     ".$fila['usr']."</option>";
-                }
-                    echo"</select>
-                </div>";
-                ?>
+               
                 <!-- Carga datos de la categoría -->
                 <?php
                 // Requerimos conección a la DB

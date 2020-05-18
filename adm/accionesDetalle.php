@@ -22,13 +22,16 @@
                 require_once("../conec.php");
                 //C Agregamos unidad de medida al insert
                 if(mysqli_query($cn,"insert into detalleingrediente (idReceta, idIngrediente, cantidad) values ('".$idReceta."','".$idIngrediente."','".$cantidad."')")){
-                    //C
+                    header("detalleIngrediente.php?idReceta=$$idReceta"); 
+
+                    
                     echo"ingrediente Insertado";
                 }
                 else{
                     //C
                     echo"Ingrediente No Insertado";
-                }       
+                }
+                header("detalleIngrediente.php?idReceta=$$idReceta");       
             }break;
 
             default:{

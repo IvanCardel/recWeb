@@ -30,7 +30,13 @@
 /* Base de footer */
 
 .foo {
+    background-color: chocolate;
+    opacity: .8;
+}
+
+.foo2 {
     background-color: #1a237e;
+    opacity: .8;
 }
 
 
@@ -140,19 +146,36 @@
     opacity: 0.9;
 }
 
+.bg8 {
+    /* coloco imagen*/
+    background-image: url("../image/as.jpg");
+    /* img completa */
+    height: 100%;
+    /* centro */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.9;*/
+}
+
 
 /* card inicial */
 
 .cardini {
     background-color: #ffffff;
-    opacity: .8;
+    opacity: .93;
+    border-radius: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-color: saddlebrown;
+    border-width: 10px;
 }
 
 
 /* Jumbotrom */
 
 .jb {
-    background-color: rgba(0, 150, 136, 0.3);
+    background-color: chocolate;
 }
 
 .te {
@@ -183,12 +206,12 @@
 
 /* Texto de encabezado paises*/
 
-.tituloPa {
+.cardini2 .tituloPa {
     font-size: 8rem;
 }
 
 .as {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .tituloPa2 {
@@ -196,6 +219,60 @@
     font-style: italic;
 }
 
-.bordeBot {
-    /* border-color: black; */
+.bg10 {
+    /* height: 100%; */
+    /* centro */
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    border-radius: 2rem;
+    width: 17rem;
+    /*opacity: 0.9;*/
+}
+
+.tecard {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.bg11 {
+    height: 30%;
+    /* centro */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2rem;
+    /*opacity: 0.9;*/
+}
+
+.fec {
+    text-align: right;
+}
+
+.titulocard {
+    font-size: 4rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.foto {
+    text-align: center;
+}
+
+.bbb {
+    background-color: sienna;
+    opacity: .9;
+}
+
+.textoCard {
+    font-style: oblique;
+    font-size: 1.5rem;
+}
+
+.colorFoo {
+    background-color: sienna;
+}
+
+.colorFoo2 {
+    background-color: #304ffe;
 }

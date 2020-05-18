@@ -12,7 +12,6 @@
 
 <body>
     <a name="index"></a>
-   
     <div class="bg">
     <!--- Carrusel -->
     <?php include_once("layout/slide.php");?>
@@ -39,15 +38,16 @@
     while($fila=mysqli_fetch_array($resultado)){
         //Card con el contenido de la base de datos 
         echo"
-        <div class=\"container\">
+        <div class=\"container col-8\">
             <div class=\"card cardini as mt-4\">
                 <div class=\"card-body\">
                     <div class=\"row\">
-                        <div class=\"col-6\">
+                        <div class=\"offset-1 col-4-m3-s2\">
                             <tr>
-                                <td><h3>Receta: ".$fila['nombreReceta']."</h3></td>
-                                <td><h4 class=\"card-subtittle mb-2 text-muted\">Categoría: ".$fila['nombreCategoria']."</h4></td>
-                                <td class=\"card-text\">Fecha: ".$fila['fecha']."</td>
+                            <br>
+                                <td><h2>".$fila['nombreReceta']."</h2></td>
+                                <td><h3 class=\"card-subtittle mb-2 text-dark\">Categoría: ".$fila['nombreCategoria']."</h3></td>
+                                <td class=\"card-text\"><p class=\"textoCard\">Fecha:  ".$fila['fecha']."</td>
                                 <br>
                                 <td class=\"card-text\">País: ".$fila['nombrePais']."</td>
                                 <br>
@@ -56,12 +56,15 @@
                                 echo"</td>
                             </tr>
                         </div>
+                        <div class=\"offset-2 col-4-m3-s2\">
+                                    <img src='image/receta/".$fila['foto']."' class=\"card-img-top  bg10\" >
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         ";
-    }
+        }
 ?>
     <br>
     </div>

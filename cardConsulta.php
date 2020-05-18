@@ -32,7 +32,7 @@
     // la condición es que obtenga los datos de la receta cuyo id obtenemos por el método get.
     $resultado=mysqli_query($cn,"SELECT 
     rec.nombreReceta, cat.nombreCategoria, rec.fecha, pa.nombrePais, 
-    ing.nombreIngrediente, ing.unidadMedida, deting.cantidad, rec.instrucciones 
+    ing.nombreIngrediente, ing.unidadMedida, deting.cantidad, rec.instrucciones, rec.foto 
     from 
     receta rec 
     inner join detalleingrediente deting ON (rec.idReceta = deting.idReceta) 
@@ -48,15 +48,16 @@
         <div class=\"container\">
             <div class=\"card cardini as mt-4\">
                 <div class=\"card-body\">
+                <td><div class=\"titulocard\">".$fila['nombreReceta']."</div></td>
+                <div class=\"col3 foto\">
+                                <img class=\"img-fluid bg11\" src='image/receta/".$fila['foto']."' >
+                </div>
                     <div class=\"row\">
-                        <div class=\"col-6\">
+                        <div class=\"col-6-m3-s2\">
                             <tr>
-                            <td><h2>Receta: ".$fila['nombreReceta']."</h2></td>
                             <td><h3 class=\"card-subtittle mb-2 text-muted\">Categoría: ".$fila['nombreCategoria']."</h3></td>
-                            <td class=\"card-text\">Fecha: ".$fila['fecha']."</td>
-                            <br>
-                            <td class=\"card-text\">País: ".$fila['nombrePais']."</td>
-                            <br>
+                            <td class=\"card-text\">País: ".$fila['nombrePais']."</td>  <br>
+                           
                             <td> 
                                 <table class=\"table mt-1\">
                                     <thead>
@@ -79,7 +80,8 @@
                                     echo"
                                     </tbody>
                                 </table>
-                                <td class=\"card-text\">Instrucciones: ".$fila['instrucciones']."</td>
+                                <td class=\"card-text\"><div class=\"tecard\">Instrucciones: ".$fila['instrucciones']." </div></td>
+                                <td class=\"card-text\"><div class=\"fec\">Fecha: ".$fila['fecha']."</div></td>
                             </tr>
                         </div>
                     </div>

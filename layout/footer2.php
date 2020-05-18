@@ -4,7 +4,7 @@
 <!-- Es el contenido que va hasta abajo de la página, en él encontramos
 los links a las redes sociales, una breve explicación del proyecto 
 y la información necesaria para contactar a la persona encargada de la página -->
-<footer class="page-footer font-small colorFoo pt-4">
+<footer class="page-footer font-small colorFoo2 pt-4">
   <div class="container-fluid text-center text-md-left">
     <div class="row">
     <!-- Texto acerca de -->
@@ -41,6 +41,6 @@ y la información necesaria para contactar a la persona encargada de la página 
     </div>
   </div>
   <!-- Derechos de autor -->
-  <div class="footer-copyright text-center text-white foo py-3">© 2020 Copyright: José Iván Cardel Sotelo 
+  <div class="footer-copyright text-center text-white foo2 py-3">© 2020 Copyright: José Iván Cardel Sotelo 
   </div>
 </footer>

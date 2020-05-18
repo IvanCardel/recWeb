@@ -18,8 +18,8 @@
     <!-- Contenido -->
     <div class="container pt-5">
         <div class="jumbotron  jb">
-        <img src="image/login.png" style="max-width:15%;width:auto;height:auto" class="rounded mx-auto d-block"  alt="No found">
-            <h3 class="display-4 text-center text-primary"> Ingresar</h3>
+        <!-- <img src="image/login.png" style="max-width:15%;width:auto;height:auto" class="rounded mx-auto d-block"  alt="No found"> -->
+            <h3 class="display-4 text-center text-white"> Ingresar</h3>
             <form class="form" id="login">
                 <div class="container">
                     <!-- inicio input-->

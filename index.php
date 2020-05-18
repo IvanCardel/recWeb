@@ -14,6 +14,7 @@ de la página web -->
 
 <!-- Inicia la parte de contenido -->
 <body>
+    
 <a name="index"></a>
 <!-- Contiene la imágen de fondo -->
 <div class="bg">
@@ -21,6 +22,7 @@ de la página web -->
     <?php include_once("layout/slide.php");?>
     <!-- navabar -->
     <?php include_once("layout/navbar.php");?>
+    <h1  class="text-center tituloPa2 text-warning">~Recetas~</h1>
     <!-- Card -->
     <?php include_once("cardsIniciales.php");?>
     <br>

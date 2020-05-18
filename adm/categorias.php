@@ -19,7 +19,7 @@
     <div class="bg5">
         <div class="container te pt-5">
             <h1>Categorías</h1>
-            <div class="jumbotron container bg-primary" id="formulario" style="display:none">
+            <div class="jumbotron container col-10  bg-primary" id="formulario" style="display:none">
             <h6 class="display-4 text-center">Agregar Categoría</h6>
                      <!-- Aquí cambio el id del formulario país por el de categoría -->
                 <form class="form" id="formularioCategoria">
@@ -34,7 +34,7 @@
                 </form>
             </div>
             <div class="row">
-                <div class="offset-8 col-2">
+                <div class="offset-8 col-2-s-1">
                      <!-- C-->
                     <div class="btn btn-primary btn-block" id="agregaCategoria">
                         <i class="fas fa-plus"></i> Agregar</div>
@@ -61,7 +61,7 @@
                     //C
                     echo"<td>".$fila['nombreCategoria']."</td>";
                     //C
-                    echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
+                    echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar&nbsp &nbsp</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
                 echo"</tr>";
             }
         ?>
@@ -75,7 +75,7 @@
 
     </div>
     <!-- Footer -->
-    <?php include_once("../layout/footer.php"); ?>
+    <?php include_once("../layout/footer2.php"); ?>
 
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
@@ -93,7 +93,7 @@
                 lengthMenu:    "Mostrar _MENU_ Elementos",
                 info:           "página _START_ de _END_ en _TOTAL_ elementos",
                 infoEmpty:      "Sin información",
-                infoFiltered:   "filtrado de _MAX_ elementos en total)",
+                infoFiltered:   "filtrado de _MAX_ elementos en total",
                 paginate: {
                     first:      "primera",
                     previous:   "anterior",

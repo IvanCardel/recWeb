@@ -1,5 +1,6 @@
 <?php
     $accion=$_POST["accion"];
+    echo$accion;
     require_once("Proteccion.php");
 
     if(isset($accion)){

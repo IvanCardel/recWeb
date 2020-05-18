@@ -17,6 +17,10 @@
     <div class="bg4">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
+    <!-- <?php echo$_SESSION['usuario']; ?> -->
+
+
+
     <h1 class="text-light text-center">Bienvenido</h1>
     <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
         <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
@@ -117,7 +121,7 @@
         </div>
     </div>
     </div>
-    <?php include_once("../layout/footer.php"); ?>
+    <?php include_once("../layout/footer2.php"); ?>
 
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
