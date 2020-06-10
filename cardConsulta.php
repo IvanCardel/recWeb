@@ -63,8 +63,9 @@
                                     <thead>
                                         <tr>
                                             <th>Ingredientes</th>
-                                            <th>Unidad de Medida</th>
                                             <th>Cantidad</th>
+                                            <th>Unidad de Medida</th>
+                                            
                                         </tr>
                                     </thead>";
                                     // Barrido de los ingredientes para llenar la tabla
@@ -72,9 +73,11 @@
                                     {
                                         echo"
                                         <tbody>
+                                       
                                             <td class=\"card-text\">".$fila['nombreIngrediente']."</td>
-                                            <td class=\"card-text\">".$fila['unidadMedida']."</td>
                                             <td class=\"card-text\">".$fila['cantidad']."</td>
+                                            <td class=\"card-text\">".$fila['unidadMedida']."</td>
+                                            
                                         ";
                                     }
                                     echo"

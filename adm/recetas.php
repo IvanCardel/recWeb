@@ -83,11 +83,12 @@
                     <i class="fas fa-plus"></i> Agregar Recetas</div>
             </div>
         </div>
-         <!-- C-->
+         <!-- Para mostrar las tablas de esta forma, necesitamos importar la librería datatables.min con la
+         extensión js-->
         <table class="table mt-1" id="tablaReceta">
             <thead>
+            <!-- Encabezados de la tabla -->
                 <tr>
-                  
                     <th>Foto</th>
                     <th>#</th>
                     <th>Receta</th>
@@ -100,11 +101,15 @@
             <tbody>
                 <?php 
         require_once("../conec.php");
-        // C
-        $resultado=mysqli_query($cn,"SELECT idReceta, foto, nombreCategoria, nombrePais, nombreReceta, fecha FROM receta R LEFT JOIN pais P ON (R.idPais = P.idPais) LEFT JOIN categoria C ON (R.idCategoria=C.idCategoria)");
+        // Selección de todas las recetas
+        // Se puiede observas que únicamente se seleccionan los campos que nos interesan, ya que hacer una consulta
+        // total a una base de datos podría colapsar el gestor, después se hace la unión de tablas
+        // por medio de un lef join.
+        $resultado=mysqli_query($cn,"SELECT idReceta, foto, nombreCategoria, nombrePais, nombreReceta, fecha 
+        FROM receta R LEFT JOIN pais P ON (R.idPais = P.idPais) LEFT JOIN categoria C ON (R.idCategoria=C.idCategoria)");
+        // Aquí se llena la tablas, contiene la información de las recetas y los botones para modificar su contenido
         while($fila=mysqli_fetch_array($resultado)){
             echo"<tr>";
-            
             echo"<td><img src='../image/receta/".$fila['foto']."' width='60px'></td>";
             echo"<td>".$fila['idReceta']."</td>";
             echo"<td>".$fila['nombreReceta']."</td>";
@@ -113,11 +118,9 @@
             echo"<td>".$fila['fecha']."</td>";
             echo"<td>
             <div class=\"container\">
-           
-                <div class=' btn-primary edita' data-id='".$fila['idReceta']."'> 
-                <a class=\"btn\"   href=\"detalleIngrediente.php?idReceta= ".$fila['idReceta']." \" >Hola</a>
-                    <i class='fas fa-pen'></i> EditarAgregar Ingredientes
-                   
+                <div class=' btn-primary edita aa' data-id='".$fila['idReceta']."'> 
+                <a class=\"btn text-white \"   href=\"detalleIngrediente.php?idReceta= ".$fila['idReceta']." \" >
+                    <i class='fas fa-pen'></i> EditarAgregar Ingredientes</a>
                 </div> 
             </div> 
             <br>
@@ -152,8 +155,8 @@
     <script src="../js/all.min.js"></script>
     <script>
 
-        //DataTables
-        // C
+        //Con este código ese pueden observar los DataTables
+
         $("#tablaReceta").dataTable({
             language: {
                 processing:     "Procesando",

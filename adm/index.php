@@ -20,32 +20,6 @@
     <!-- <?php echo$_SESSION['usuario']; ?> -->
 
 
-
-    <h1 class="text-light text-center">Bienvenido</h1>
-    <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-        <div class="toast tocard" style="position: absolute; top: 0; right: 0;">
-            <div class="toast-header">
-                <div class="container">
-                    <img src="../image/ivn.jpg" class="img-thumbnail" alt="No found">
-                </div>
-                <strong class="mr-auto text-dark ">Recetario ha mandado un mensaje</strong>
-                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-            </div>
-            <div class="toast-body letracard">
-                Bienvenido
-                <?php
-                if(!isset($_SESSION))
-                {
-                    session_start();
-                } 
-                echo "<td class=\"letracard\"> ".$_SESSION["usuario"]."</td>";
-                ?>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Contenido del index -->
     <div class="container mt-5">
         <div class="row">
@@ -56,7 +30,9 @@
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
+                    // Query que me regresa el total de recetas
                     $resultado=mysqli_query($cn,"select nombreReceta from receta");
+                    // Aquí se muestran en forma de lista
                     while($fila=mysqli_fetch_array($resultado))
                     {
                         echo"<td>* ".$fila['nombreReceta']."</td>";
@@ -73,7 +49,9 @@
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
+                    // Aquí obtengo todas la última receta que se ingresó
                     $resultado=mysqli_query($cn,"select * from receta order by (idReceta)desc");
+                    // Imprime
                     if($fila=mysqli_fetch_array($resultado))
                     {
                         echo"<td>* ".$fila['nombreReceta']."</td>";
@@ -91,6 +69,7 @@
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
+                    // Se selecciona el nombre de todos los países ingresados en la tabla país
                     $resultado=mysqli_query($cn,"select nombrePais from pais");
                     while($fila=mysqli_fetch_array($resultado))
                     {
@@ -108,6 +87,7 @@
                     <div class="card-body">
                     <?php 
                     require_once("../conec.php");
+                      // Se selecciona el nombre de todos las categorías ingresados en la tabla categoría
                     $resultado=mysqli_query($cn,"select nombreIngrediente from ingrediente");
                     while($fila=mysqli_fetch_array($resultado))
                     {

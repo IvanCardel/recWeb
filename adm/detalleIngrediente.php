@@ -14,7 +14,6 @@
     <div class="bg1">
     <!-- navabar -->
     <?php include_once("../layout/navbaradm.php"); ?>
-    
     <!-- Contenido -->
     <div class="container te pt-5">
     <h1 class="offset-1">Ingredientes disponibles &nbsp &nbsp Ingredientes agregados </h1>
@@ -24,7 +23,6 @@
         <table class="table mt-1" id="tablaReceta">
             <thead>
                 <tr>
-                
                     <th>#</th>
                     <th>Ingrediente</th>
                     <th>Unidad de Medida</th>
@@ -52,18 +50,13 @@
         </table>
                <!-- Cierra columna izquierda -->
                     </div>
-
                     <!------------------------ INGREDIENTES QUE YA HAN SIDO AGREGADOS ------------------------------------->
                     <!-- Abre columna derecha -->
                     <div class="col-6">
-
-                    <table class="table mt-1" id="tablaReceta2">
-                        
+                    <table class="table mt-1" id="tablaReceta2">   
             <thead>
                 <tr>
-                
                     <!-- <th>#</th> -->
-                  
                     <th>Ingrediente</th>
                     <th>Unidad de Medida</th>
                     <th>Cantidad</th>
@@ -82,7 +75,7 @@
                 echo"<td>".$fila['cantidad']."</td>";
                 // Acciones
                 echo"<td>
-                <div class=\"container\"><div class='btn btn-danger borrar' data-id='".$fila['idIngrediente']."' name=\"$idReceta\"><i class='fas fa-trash'></i> Eliminar</div></td>";
+                <div class=\"container\"><div class='btn btn-danger borrar' data-id='".$fila['idIngrediente']."'><i class='fas fa-trash'></i> Eliminar</div></td>";
             echo"</tr>";
         }
     ?>
@@ -111,8 +104,20 @@
 
         //DataTables
         // C
-        
-    
+        $(".borrar").on("click",function(){
+            var receta={
+                idReceta:$(this).data("id"),
+                accion:"borrar",
+            };
+            $.ajax({
+                method: "POST",
+                url: "accionesReceta.php",
+                data: receta,
+                success: function(){
+                    window.location.replace("detalleIngrediente.php");
+                }
+            });
+        });
  
         $(".agregaring").on("click",function(){
             var idIngrediente=$(this).data("id");

@@ -33,6 +33,17 @@
                 }
                 header("detalleIngrediente.php?idReceta=$$idReceta");       
             }break;
+            case "borrar":{
+                $idReceta=$_POST["idReceta"];
+                require_once("../conec.php");
+                if(mysqli_query($cn,"delete from detalleingrediente where idReceta=".$idReceta)){
+                    echo"valor borrado";
+                }else{
+                    echo"No se pudo borrar  ";
+                }
+
+                
+            }break;
 
             default:{
                 echo"funcion no encontrada";

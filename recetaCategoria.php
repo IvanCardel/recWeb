@@ -18,7 +18,9 @@
     <!-- navabar -->
     <?php include_once("layout/navbar.php");?>
 <?php
+    // conexión a la base de datos
     require_once("conec.php");
+    // recibimos la variable que manda el nabvar
     $idCategoria = $_GET["idCategoria"];
     
     // Qyuery para sacar la consulta del nombre de la categoría    

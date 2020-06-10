@@ -2,7 +2,6 @@
     require_once("../conec.php");
     $accion=$_POST["accion"];
     $idIngrediente=$_POST["idIngrediente"];
-    $idReceta=$_POST["idReceta"];
 ?>
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -14,12 +13,20 @@
             <form class="form" id="formularioEditar">
                                     
                 <input type="hidden" name="accion" value="<?php echo$accion ?>">
-                <label for="idReceta"> id Receta</label>
-                <input type="hidden" name="idReceta" value="<?php echo$idReceta ?>">
                 
-              
+                <?php 
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"select * from receta order by (idReceta)asc");
+                    if($fila=mysqli_fetch_array($resultado))
+                    {
+                        //echo"<td> ".$fila['idReceta']."</td>";
+                        
+                        echo"<label for=\"idReceta\"></label>";
+                        echo"<input type=\"hidden\" name=\"idReceta\" value=\"$fila[idReceta]\">";
+                    }
+                ?>
 
-                <label for="idIngrediente">Ingrediente</label>
+                <label for="idIngrediente"></label>
                 <input type="hidden" name="idIngrediente" value="<?php echo$idIngrediente?>">
         
                 <label for="cantidad"> Cantidad</label>

@@ -1,4 +1,8 @@
 <?php
+// Se atrapan los archivos y  se asignan a una variable de sesión,
+// después se comparan en la DB y se regresa un objeto tipo string
+// que endado caso de pertenecer a la base de datos, será permiso sí,
+// de lo contrario se denegará el acceso.
     $usuario=$_POST['usuario'];
     $pass=$_POST['pass'];
     if(!isset($_SESSION)){

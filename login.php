@@ -19,6 +19,7 @@
     <div class="container pt-5">
         <div class="jumbotron  jb">
         <!-- <img src="image/login.png" style="max-width:15%;width:auto;height:auto" class="rounded mx-auto d-block"  alt="No found"> -->
+        <!-- este es el formulario para acceder a la parte de administración -->
             <h3 class="display-4 text-center text-white"> Ingresar</h3>
             <form class="form" id="login">
                 <div class="container">
@@ -30,6 +31,7 @@
                                 <i class="fas fa-user fa-lg"></i>
                             </div>
                         </div>
+                        <!-- Aquí se coloca el usuario -->
                         <input type="text" class="form-control col-form-label-lg inputform" name="usuario" id="usuario" placeholder="Usuario">
                     </div>
                     <br>
@@ -41,6 +43,7 @@
                                 <i class="fas fa-key fa-lg"></i>
                             </div>
                         </div>
+                        <!--  Aquí la contraseña -->
                         <input type="password" class="form-control inputform col-form-label-lg" name="pass" id="pass" placeholder="Contraseña">
                         <br>
                     </div>
@@ -52,6 +55,8 @@
                     </div>
                     <div class="row">
                         <div class="offset-5  col-xs-2 col-md-2">
+                        <!-- Con este botón enviamos los parámetros a la base de datos para hacer la comparación
+                        y dejar entrar o denegar el acceso -->
                             <input type="submit" value="Enviar" class="btn btn-success btn-block" id="enviar">
                         </div>
                         <br>
