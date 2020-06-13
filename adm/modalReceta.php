@@ -10,7 +10,6 @@
         $nomReceta= $fila["nombreReceta"];
         $inst= $fila["instrucciones"];
         $idCate= $fila["idCategoria"];
-        $fot= $fila["foto"];
         $idPa= $fila["idPais"];
     }
 ?>
@@ -22,61 +21,47 @@
         </div>
         <div class="modal-body">
             <form class="form" id="formularioEditar">
-                <!-- Accion -->
                 <input type="hidden" name="accion" value="<?php echo$accion ?>">
                 <input type="hidden" name="idReceta" value="<?php echo$idReceta?>">
-                <!-- agregar nombre de receta-->
                 <label for="nombreReceta">Nombre de la receta: </label>
                 <input type="text" name="nombreReceta" class="form-control" value="<?php echo$nomReceta ?>">
-                 <!-- Agregar instrucciones-->
                  <label for="instrucciones">Instrucciones : </label>
-                <input type="text" name="instrucciones" class="form-control" value="<?php echo$inst ?>">
-                <!-- Agregar fecha-->
-                <label for="fecha"></label>
-                <input type="hidden" name="fecha" class="form-control" value="<?php echo$fech ?>">
-               
-                <!-- Carga datos de la categoría -->
+                 <textarea name="instrucciones" class="form-control" ><?php echo$inst ?></textarea>
+                <div>
                 <?php
-                // Requerimos conección a la DB
                 require_once("../conec.php");
-                // Query para traer los datos de la categoría
                 $resultado=mysqli_query($cn,"select * from categoria ");
                 $res=mysqli_query($cn,"select * from categoria where idCategoria = $idCate");
-                // Armamos el select
-                echo"<div class=\"form-group\">";
+                echo"<div class='form-group'>";
                 if($fil=mysqli_fetch_array($res))  
-                    echo"<label for=\"idCategoria\">Categoría: ".$fil['nombreCategoria']."</label>
-                    <select class=\"form-control\" name=\"idCategoria\" id=\"idCategoria\">";
+                    echo"<label for='idCategoria'>Categoría:</label>
+                    <select class='form-control' name='idCategoria'>
+                    <option selected>".$fil['nombreCategoria']."";
                 while($fila=mysqli_fetch_array($resultado)){  
                     echo "<option value='".$fila['idCategoria']."'>".$fila['nombreCategoria']."</option>";
                 }
                     echo"</select>
                 </div>";
                 ?>
-                <!-- Agregar foto-->
-                <div class="form-group">
-                    <label for="foto">Foto</label>
-                    <input type="file" class="form-control-file" name="foto" id="foto" value="<?php echo$nombreArchivo ?>">
                 </div>
-                <!-- Carga datos de la país -->
+                <div>
                 <?php
-                // Requerimos conección a la DB
-                require_once("../conec.php");
-                // Query para traer los datos del país
-                $resultado=mysqli_query($cn,"select * from pais");
-                $res=mysqli_query($cn,"select * from pais where idPais=$idPa");
-
-                // Armamos el select
-                echo"<div class=\"form-group\">";
-                if($fil=mysqli_fetch_array($res))
-                    echo"<label for=\"idPais\">País: ".$fil['nombrePais']."</label>
-                    <select class=\"form-control\" name=\"idPais\" id=\"idPais\">";
-                while($fila=mysqli_fetch_array($resultado)){  
-                    echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
-                }
-                    echo"</select>
-                </div>";
+                    require_once("../conec.php");
+                    $resultado=mysqli_query($cn,"SELECT * FROM pais");
+                    $res=mysqli_query($cn,"select * from pais where idPais = $idPa");
+                    $fil=mysqli_fetch_array($res);
+                        echo"<div class='form-group'>";
+                            echo"<label for='idPais'>País: </label>
+                            <select class='form-control' name='idPais'>
+                            <option selected>".$fil['nombrePais']."";
+                            while($fila=mysqli_fetch_array($resultado))
+                            {
+                                echo "<option value='".$fila['idPais']."'>".$fila['nombrePais']."</option>";
+                            }
+                            echo"</select>
+                        </div>";
                 ?>
+                </div>
                 <br>
                 <!--Editar -->
                 <input type="button" class="btn btn-primary" value="Editar Receta" id="botonEditar">

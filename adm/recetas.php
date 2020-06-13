@@ -101,10 +101,6 @@
             <tbody>
                 <?php 
         require_once("../conec.php");
-        // Selección de todas las recetas
-        // Se puiede observas que únicamente se seleccionan los campos que nos interesan, ya que hacer una consulta
-        // total a una base de datos podría colapsar el gestor, después se hace la unión de tablas
-        // por medio de un lef join.
         $resultado=mysqli_query($cn,"SELECT idReceta, foto, nombreCategoria, nombrePais, nombreReceta, fecha 
         FROM receta R LEFT JOIN pais P ON (R.idPais = P.idPais) LEFT JOIN categoria C ON (R.idCategoria=C.idCategoria)");
         // Aquí se llena la tablas, contiene la información de las recetas y los botones para modificar su contenido
@@ -117,19 +113,21 @@
             echo"<td>".$fila['nombrePais']."</td>";
             echo"<td>".$fila['fecha']."</td>";
             echo"<td>
-            <div class=\"container\">
-                <div class=' btn-primary edita aa' data-id='".$fila['idReceta']."'> 
-                <a class=\"btn text-white \"   href=\"detalleIngrediente.php?idReceta= ".$fila['idReceta']." \" >
-                    <i class='fas fa-pen'></i> EditarAgregar Ingredientes</a>
+            <div class='container'>
+                <div class='btn btn-primary editar' data-id='".$fila['idReceta']."'>
+                    <i class='fas fa-pen'></i>&nbsp Ingredientes
+                </div>
+                <div class='btn btn-warning editarF' data-id='".$fila['idReceta']."'>
+                    <i class='fas fa-pen'></i> Editar Foto 
                 </div> 
             </div> 
             <br>
-            <div class=\"container\">  
+            <div class='container'>  
                 <div class='btn btn-success editar' data-id='".$fila['idReceta']."'>
                     <i class='fas fa-pen'></i> Editar Receta
                 </div>
                 <div class='btn btn-danger borrar' data-id='".$fila['idReceta']."'>
-                    <i class='fas fa-trash'></i> Eliminar
+                    <i class='fas fa-trash'></i>&nbsp Eliminar &nbsp &nbsp
                 </div>
             </div>
                 </td>";
@@ -138,13 +136,12 @@
     ?>
             </tbody>
         </table>
-
     </div>
     <!-- Ventana Modal -->
     <div class="modal" role="dialog">
 
     </div>
-    </div>
+</div>
     <!-- Footer -->
     <?php include_once("../layout/footer2.php"); ?>
 
@@ -198,6 +195,13 @@
             var idReceta=$(this).data("id");
             console.log(idReceta);
             $(".modal").load("modalReceta.php",{"accion":"editar","idReceta":idReceta});
+            $(".modal").modal();
+        });
+
+        $(".editarF").on("click",function(){
+            var idReceta=$(this).data("id");
+            console.log(idReceta);
+            $(".modal").load("modalRecetaFoto.php",{"accion":"editarF","idReceta":idReceta});
             $(".modal").modal();
         });
 
