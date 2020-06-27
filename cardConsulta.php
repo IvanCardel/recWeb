@@ -53,7 +53,7 @@
                                 <img class=\"img-fluid bg11\" src='image/receta/".$fila['foto']."' >
                 </div>
                     <div class=\"row\">
-                        <div class=\"col-6-m3-s2\">
+                        <div class=\"col-12\">
                             <tr>
                             <td><h3 class=\"card-subtittle mb-2 text-muted\">Categoría: ".$fila['nombreCategoria']."</h3></td>
                             <td class=\"card-text\">País: ".$fila['nombrePais']."</td>  <br>

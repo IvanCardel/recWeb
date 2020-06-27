@@ -60,7 +60,7 @@
                 <?php 
         require_once("../conec.php");
         // C
-        $resultado=mysqli_query($cn,"select * from ingrediente");
+        $resultado=mysqli_query($cn,"SELECT * FROM ingrediente");
         while($fila=mysqli_fetch_array($resultado)){
             echo"<tr>";
                 //C
@@ -92,9 +92,6 @@
     <script src="../js/datatables.min.js"></script>
     <script src="../js/all.min.js"></script>
     <script>
-
-        //DataTables
-        // C
         $("#tablaIngrediente").dataTable({
             language: {
                 processing:     "Procesando",
@@ -138,11 +135,8 @@
         });
         //editar un ingrediente
         $(".editar").on("click",function(){
-            //C
             var idingrediente=$(this).data("id");
-            //C
             console.log(idingrediente);
-            //C
             $(".modal").load("modalIngrediente.php",{"accion":"editar","idIngrediente":idingrediente});
             $(".modal").modal();
 

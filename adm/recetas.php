@@ -50,6 +50,7 @@
                         </div>                        
                         <!-- Agregar foto-->
                        
+                        <label for="foto"></label>
                             <input type="file" name="foto" id="" class="form-control-file">
                        
 
@@ -82,7 +83,7 @@
                 <div class="btn btn-primary btn-block" id="agregaReceta">
                     <i class="fas fa-plus"></i> Agregar Recetas</div>
             </div>
-        </div>
+        </div><br><br>
          <!-- Para mostrar las tablas de esta forma, necesitamos importar la librería datatables.min con la
          extensión js-->
         <table class="table mt-1" id="tablaReceta">
@@ -114,9 +115,11 @@
             echo"<td>".$fila['fecha']."</td>";
             echo"<td>
             <div class='container'>
-                <div class='btn btn-primary editar' data-id='".$fila['idReceta']."'>
-                    <i class='fas fa-pen'></i>&nbsp Ingredientes
-                </div>
+                <a href='detalleIngrediente.php?idReceta=".$fila['idReceta']."'>
+                    <div class='btn btn-primary editarI'>
+                        <i class='fas fa-pen'></i>&nbsp Ingredientes
+                    </div>
+                </a>
                 <div class='btn btn-warning editarF' data-id='".$fila['idReceta']."'>
                     <i class='fas fa-pen'></i> Editar Foto 
                 </div> 

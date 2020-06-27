@@ -1,50 +1,36 @@
 <?php
     $accion=$_POST["accion"];
-    require_once("Proteccion.php");
-
+    echo$accion;
     if(isset($accion)){
         switch($accion){
+            case "borrar":{
+                $idReceta=$_POST["idReceta"];
+                $idIngrediente=$_POST["idIngrediente"];
+                require_once("../conec.php");
+                if(mysqli_query($cn,"DELETE FROM detalleingrediente WHERE idReceta = $idReceta AND  idIngrediente = $idIngrediente")){
+                    echo"valor borrado";
+                }else{
+                    echo"No se pudo borrar  ";
+                }
+                header("location:detalleIngrediente.php?idReceta=$idReceta");
+            }break;
             case "insertar":{          
-                
-                if(!isset($_POST["idReceta"]) OR $_POST["idReceta"]==""){
-                    die("no hay unidad");
-                }  
-                if(!isset($_POST["idIngrediente"]) OR $_POST["idIngrediente"]==""){
-                    die("no hay unidad");
-                }
-                if(!isset($_POST["cantidad"]) OR $_POST["cantidad"]==""){
-                    die("no hay unidad");
-                }
                 $idReceta=$_POST["idReceta"];
                 $idIngrediente=$_POST["idIngrediente"];
                 $cantidad=$_POST["cantidad"];
                 
                 require_once("../conec.php");
-                //C Agregamos unidad de medida al insert
-                if(mysqli_query($cn,"insert into detalleingrediente (idReceta, idIngrediente, cantidad) values ('".$idReceta."','".$idIngrediente."','".$cantidad."')")){
-                    header("detalleIngrediente.php?idReceta=$$idReceta"); 
-
-                    
-                    echo"ingrediente Insertado";
+                if(mysqli_query($cn,"INSERT INTO detalleingrediente 
+                (idReceta, idIngrediente, cantidad) 
+                values ('.$idReceta.','.$idIngrediente.','.$cantidad.')")){
+                echo"Ingrediente Insertado";
+               
                 }
                 else{
-                    //C
                     echo"Ingrediente No Insertado";
                 }
-                header("detalleIngrediente.php?idReceta=$$idReceta");       
+                header("location:detalleIngrediente.php?idReceta=$idReceta");
             }break;
-            case "borrar":{
-                $idReceta=$_POST["idReceta"];
-                require_once("../conec.php");
-                if(mysqli_query($cn,"delete from detalleingrediente where idReceta=".$idReceta)){
-                    echo"valor borrado";
-                }else{
-                    echo"No se pudo borrar  ";
-                }
-
-                
-            }break;
-
             default:{
                 echo"funcion no encontrada";
             }        

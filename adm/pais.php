@@ -50,7 +50,18 @@
             echo"<tr>";
                 echo"<td>".$fila['idPais']."</td>";
                 echo"<td>".$fila['nombrePais']."</td>";
-                echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idPais']."'><i class='fas fa-pen'></i> Editar&nbsp &nbsp</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idPais']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
+                echo"<td>
+                    <div class=\"container\">
+                        <div class='btn btn-success editar' data-id='".$fila['idPais']."'>
+                            <i class='fas fa-pen'></i> 
+                            Editar&nbsp &nbsp
+                        </div> &nbsp 
+                        <div class='btn btn-danger borrar' data-id='".$fila['idPais']."'>
+                            <i class='fas fa-trash'></i> 
+                            Eliminar
+                        </div>
+                    </div>
+                    </td>";
             echo"</tr>";
         }
     ?>
