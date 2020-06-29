@@ -19,28 +19,22 @@
     <div class="bg5">
         <div class="container te pt-5">
             <h1>Categorías</h1>
-            <div class="jumbotron container col-10  bg-primary" id="formulario" style="display:none">
+            <div class="jumbotron container col-10  bg-warning" id="formulario" style="display:none">
             <h6 class="display-4 text-center">Agregar Categoría</h6>
-                     <!-- Aquí cambio el id del formulario país por el de categoría -->
                 <form class="form" id="formularioCategoria">
-                    <!-- C-->
                     <label for="nombreCategoria">Nombre : </label>
-                     <!-- C-->
                     <input type="text" name="nombreCategoria" class="form-control">
                     <hr>
                     <input type="hidden" name="accion" value="insertar">
-                     <!-- C-->
-                    <input type="button" class="btn btn-primary bordeBot" id="insertar" value="Agregar Categoria">
+                    <input type="submit" class="btn btn-primary bordeBot" id="insertar" value="Agregar Categoria">
                 </form>
             </div>
             <div class="row">
                 <div class="offset-8 col-2-s-1">
-                     <!-- C-->
                     <div class="btn btn-primary btn-block" id="agregaCategoria">
                         <i class="fas fa-plus"></i> Agregar</div>
                 </div>
             </div>
-             <!-- C-->
             <table class="table mt-1" id="tablaCategoria">
                 <thead>
                     <tr>
@@ -50,17 +44,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
+        <?php 
             require_once("../conec.php");
-            // C
             $resultado=mysqli_query($cn,"select * from categoria");
             while($fila=mysqli_fetch_array($resultado)){
                 echo"<tr>";
-                    //C
                     echo"<td>".$fila['idCategoria']."</td>";
-                    //C
                     echo"<td>".$fila['nombreCategoria']."</td>";
-                    //C
                     echo"<td><div class=\"container\"><div class='btn btn-success editar' data-id='".$fila['idCategoria']."'><i class='fas fa-pen'></i> Editar&nbsp &nbsp</div> &nbsp <div class='btn btn-danger borrar' data-id='".$fila['idCategoria']."'><i class='fas fa-trash'></i> Eliminar</div></div></td>";
                 echo"</tr>";
             }
@@ -85,7 +75,6 @@
     <script>
 
         //DataTables
-        // C
         $("#tablaCategoria").dataTable({
             language: {
                 processing:     "Procesando",
@@ -117,44 +106,70 @@
             };
             $.ajax({
                 method: "POST",
-                //C
                 url: "accionesCategoria.php",
-                //C
                 data: categoria,
                 success: function(){
-                    //C
                     window.location.replace("categorias.php");
                 }
             });
         });
         //editar un categoria
         $(".editar").on("click",function(){
-            //C
             var idcategoria=$(this).data("id");
-            //C
             console.log(idcategoria);
-            //C
             $(".modal").load("modalCategoria.php",{"accion":"editar","idCategoria":idcategoria});
             $(".modal").modal();
 
         });
 
-        //agregar una nueva categoria
-        $("#insertar").on("click",function(){
-            //C
-            var parametros=$("#formularioCategoria").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                //C
-                url: "accionesCategoria.php",
-                data: parametros,
-                success: function(){
-                    //C
-                    window.location.replace("categorias.php");
+        // Insertar
+        $("#insertar").on("click", function() {
+            $("#formularioCategoria").validate({
+                rules: {
+                    nombreCategoria: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                messages: {
+                    nombreCategoria: {
+                        required: "El nombre es requerido",
+                        minlength: "Debe contener mínimo 2 caracteres ",
+                    },
+                },
+                errorElement: "span",
+                errorClass: "error",
+                errorPlacement: function(error,
+                    element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function() {
+                    var parametros = $("#formularioCategoria").serialize();
+                    console.log(parametros)
+                    $.ajax({
+                        url: "accionesCategoria.php",
+                        type: 'POST',
+                        data: parametros,
+                        success: function (respuesta) {
+                            window.location.replace("categorias.php");
+                        }
+                    });
                 }
             });
         });
+        //agregar una nueva categoria
+        // $("#insertar").on("click",function(){
+        //     var parametros=$("#formularioCategoria").serialize();
+        //     console.log(parametros);
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "accionesCategoria.php",
+        //         data: parametros,
+        //         success: function(){
+        //             window.location.replace("categorias.php");
+        //         }
+        //     });
+        // });
 
         //boton agregar categoria
         //C

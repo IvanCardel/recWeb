@@ -19,23 +19,21 @@
     <!-- Contenido -->
     <div class="container te pt-5">
     <h1>Ingredientes</h1>
-        <div class="jumbotron col-10 container bg-primary" id="formulario" style="display:none">
+        <div class="jumbotron col-10 container bg-warning" id="formulario" style="display:none">
         <!-- Alta ingredientes -->
         <h6 class="display-4 text-center">Agregar Ingrediente</h6>
                  <!-- Aquí cambio el id del formulario país por el de ingrediente-->
             <form class="form" id="formularioIngrediente">
                 <!-- C agregar nombre de ingrediente-->
                 <label for="nombreIngrediente">Nombre : </label>
-                 <!-- C-->
                 <input type="text" name="nombreIngrediente" class="form-control">
-                <!-- C agregar unidad de medida-->
+                <br>
                 <label for="unidadMedida">Unidad de Medida : </label>
-                 <!-- C-->
                 <input type="text" name="unidadMedida" class="form-control">
                 <hr>
                 <input type="hidden" name="accion" value="insertar">
                  <!-- C-->
-                <input type="button" class="btn btn-primary" id="insertar" value="Agregar Ingrediente">
+                <input type="submit" class="btn btn-primary" id="insertar" value="Agregar Ingrediente">
             </form>
         </div>
         <div class="row">
@@ -112,55 +110,93 @@
                 }
             }
         });
-
-        //Elimnar un ingredientes
+        // Borrar
         $(".borrar").on("click",function(){
-            //C
             var ingrediente={
-                //C
                 idIngrediente:$(this).data("id"),
                 accion:"borrar",
             };
             $.ajax({
                 method: "POST",
-                //C
                 url: "accionesIngrediente.php",
-                //C
                 data: ingrediente,
                 success: function(){
-                    //C
                     window.location.replace("ingredientes.php");
                 }
             });
         });
-        //editar un ingrediente
+        // Editar
         $(".editar").on("click",function(){
             var idingrediente=$(this).data("id");
             console.log(idingrediente);
             $(".modal").load("modalIngrediente.php",{"accion":"editar","idIngrediente":idingrediente});
             $(".modal").modal();
-
         });
 
-        //agregar un ingrediente
-        $("#insertar").on("click",function(){
-            //C
-            var parametros=$("#formularioIngrediente").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                //C
-                url: "accionesIngrediente.php",
-                data: parametros,
-                success: function(){
-                    //C
-                    window.location.replace("ingredientes.php");
+        // Insertar
+        $("#insertar").on("click", function() {
+            $("#formularioIngrediente").validate({
+                rules: {
+                    nombreIngrediente: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    unidadMedida: {
+                        required: true,
+                        minlength: 1,
+                        number: true,
+                    },
+                },
+                messages: {
+                    nombreIngrediente: {
+                        required: "El nombre es requerido",
+                        minlength: "Debe contener mínimo 2 caracteres ",
+                    },
+                    unidadMedida: {
+                        required: "La unidad es requerida",
+                        minlength: "Debe contener mínimo 1 dígito",
+                        number: "Ingresa un número válido",
+                    },
+                },
+                errorElement: "span",
+                errorClass: "error",
+                errorPlacement: function(error,
+                    element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function() {
+                    var parametros = $("#formularioIngrediente").serialize();
+                    console.log(parametros)
+                    $.ajax({
+                        url: "accionesIngrediente.php",
+                        type: 'POST',
+                        data: parametros,
+                        success: function (respuesta) {
+                            window.location.replace("ingredientes.php");
+                        }
+                    });
                 }
             });
         });
 
+        //agregar un ingrediente
+        // $("#insertar").on("click",function(){
+        //     //C
+        //     var parametros=$("#formularioIngrediente").serialize();
+        //     console.log(parametros);
+        //     $.ajax({
+        //         method: "POST",
+        //         //C
+        //         url: "accionesIngrediente.php",
+        //         data: parametros,
+        //         success: function(){
+        //             //C
+        //             window.location.replace("ingredientes.php");
+        //         }
+        //     });
+        // });
+
         //boton agregar ingrediente
-        //C
         $("#agregaIngrediente").on("click",function(){
             $("#formulario").toggle("slow");
         });

@@ -27,7 +27,7 @@
             <input type="text" name="nombreCategoria" value="<?php echo$nomCategoria ?>" class="form-control">
             <br>
             <!--C-->
-            <input type="button" class="btn btn-primary" value="Editar Categoria" id="botonEditar">
+            <input type="submit" class="btn btn-primary" value="Editar Categoria" id="botonEditar">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
@@ -35,16 +35,53 @@
 </div>
 <script>
         //editar un categoria
-        $("#botonEditar").on("click",function(){
-            var parametros=$("#formularioEditar").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                //C
-                url: "accionesCategoria.php",
-                data: parametros,
-                success: function(){
-                    window.location.replace("categorias.php");
+        // $("#botonEditar").on("click",function(){
+        //     var parametros=$("#formularioEditar").serialize();
+        //     console.log(parametros);
+        //     $.ajax({
+        //         method: "POST",
+        //         //C
+        //         url: "accionesCategoria.php",
+        //         data: parametros,
+        //         success: function(){
+        //             window.location.replace("categorias.php");
+        //         }
+        //     });
+        // });
+
+
+         // Insertar
+        $("#botonEditar").on("click", function() {
+            $("#formularioEditar").validate({
+                rules: {
+                    nombreCategoria: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                messages: {
+                    nombreCategoria: {
+                        required: "El nombre es requerido",
+                        minlength: "Debe contener mínimo 2 caracteres ",
+                    },
+                },
+                errorElement: "span",
+                errorClass: "error",
+                errorPlacement: function(error,
+                    element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function() {
+                    var parametros = $("#formularioEditar").serialize();
+                    console.log(parametros)
+                    $.ajax({
+                        url: "accionesCategoria.php",
+                        type: 'POST',
+                        data: parametros,
+                        success: function (respuesta) {
+                            window.location.replace("categorias.php");
+                        }
+                    });
                 }
             });
         });

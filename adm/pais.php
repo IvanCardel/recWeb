@@ -18,14 +18,14 @@
     <div class="bg2">
     <div class="container te pt-5">
     <h1>Países</h1>
-        <div class="jumbotron col-10 container bg-primary" id="formulario" style="display:none">
+        <div class="jumbotron col-10 container bg-warning" id="formulario" style="display:none">
         <h6 class="display-4 text-center">Agregar País</h6>
             <form class="form" id="formularioPais">
                 <label for="nombrePais">Nombre : </label>
                 <input type="text" name="nombrePais" class="form-control">
                 <hr>
                 <input type="hidden" name="accion" value="insertar">
-                <input type="button" class="btn btn-primary" id="insertar" value="Agregar Pais">
+                <input type="submit" class="btn btn-primary" id="insertar" value="Agregar Pais">
             </form>
         </div>
         <div class="row">
@@ -129,19 +129,55 @@
 
         });
 
-        //agregar un nuevo pais
-        $("#insertar").on("click",function(){
-            var parametros=$("#formularioPais").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                url: "accionesPais.php",
-                data: parametros,
-                success: function(){
-                    window.location.replace("pais.php");
+        // Insertar
+        $("#insertar").on("click", function() {
+            $("#formularioPais").validate({
+                rules: {
+                    nombrePais: {
+                        required: true,
+                        minlength: 3,
+                    },
+                },
+                messages: {
+                    nombrePais: {
+                        required: "El nombre es requerido",
+                        minlength: "Debe contener mínimo 3 caracteres ",
+                    },
+                },
+                errorElement: "span",
+                errorClass: "error",
+                errorPlacement: function(error,
+                    element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function() {
+                    var parametros = $("#formularioPais").serialize();
+                    console.log(parametros)
+                    $.ajax({
+                        url: "accionesPais.php",
+                        type: 'POST',
+                        data: parametros,
+                        success: function (respuesta) {
+                            window.location.replace("pais.php");
+                        }
+                    });
                 }
             });
         });
+
+        //agregar un nuevo pais
+        // $("#insertar").on("click",function(){
+        //     var parametros=$("#formularioPais").serialize();
+        //     console.log(parametros);
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "accionesPais.php",
+        //         data: parametros,
+        //         success: function(){
+        //             window.location.replace("pais.php");
+        //         }
+        //     });
+        // });
 
         //boton agregar pais
         $("#agregaPais").on("click",function(){

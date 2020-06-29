@@ -19,24 +19,61 @@
             <input type="hidden" name="idPais" value="<?php echo$idPais ?>">
             <input type="text" name="nombrePais" value="<?php echo$nomPais ?>" class="form-control">
             <br>
-            <input type="button" class="btn btn-primary" value="Editar Pais" id="botonEditar">
+            <input type="submit" class="btn btn-primary" value="Editar Pais" id="botonEditar">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
     </div>
 </div>
 <script>
-        //editar un pais
-        $("#botonEditar").on("click",function(){
-            var parametros=$("#formularioEditar").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                url: "accionesPais.php",
-                data: parametros,
-                success: function(){
-                    window.location.replace("pais.php");
+    $("#botonEditar").on("click", function() {
+            $("#formularioEditar").validate({
+                rules: {
+                    nombrePais: {
+                        required: true,
+                        minlength: 3,
+                    },
+                },
+                messages: {
+                    nombrePais: {
+                        required: "El nombre es requerido",
+                        minlength: "Debe contener mínimo 3 caracteres ",
+                    },
+                },
+                errorElement: "span",
+                errorClass: "error",
+                errorPlacement: function(error,
+                    element) {
+                    error.insertAfter(element);
+                },
+                submitHandler: function() {
+                    var parametros = $("#formularioEditar").serialize();
+                    console.log(parametros)
+                    $.ajax({
+                        url: "accionesPais.php",
+                        type: 'POST',
+                        data: parametros,
+                        success: function (respuesta) {
+                            window.location.replace("pais.php");
+                        }
+                    });
                 }
             });
         });
+
+
+
+        //editar un pais
+        // $("#botonEditar").on("click",function(){
+        //     var parametros=$("#formularioEditar").serialize();
+        //     console.log(parametros);
+        //     $.ajax({
+        //         method: "POST",
+        //         url: "accionesPais.php",
+        //         data: parametros,
+        //         success: function(){
+        //             window.location.replace("pais.php");
+        //         }
+        //     });
+        // });
 </script>

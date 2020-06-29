@@ -22,35 +22,75 @@
         <form class="form" id="formularioEditar">
         <label for="nombreIngrediente">Nombre del ingrediente: </label>
             <input type="hidden" name="accion" value="<?php echo$accion ?>">
-            <!--C-->
             <input type="hidden" name="idIngrediente" value="<?php echo$idIngrediente ?>">
-            <!--C-->
             <input type="text" name="nombreIngrediente" value="<?php echo$nomIngrediente ?>" class="form-control">
-
+            <br>
             <label for="nombreIngrediente">Unidad de  Medida: </label>
             <input type="text" name="unidadMedida" value="<?php echo$uniMedida ?>" class="form-control">
             <br>
-            <!--C-->
-            <input type="button" class="btn btn-primary" value="Editar Ingrediente" id="botonEditar">
+            
+            <input type="submit" class="btn btn-primary" value="Editar Ingrediente" id="botonEditar">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         </form>
       </div>
     </div>
 </div>
 <script>
-        //editar un ingrediente
-        $("#botonEditar").on("click",function(){
-            var parametros=$("#formularioEditar").serialize();
-            console.log(parametros);
-            $.ajax({
-                method: "POST",
-                //C
-                url: "accionesIngrediente.php",
-                data: parametros,
-                success: function(){
-                    //Ingrediente
-                    window.location.replace("ingredientes.php");
-                }
-            });
+    $("#botonEditar").on("click", function() {
+        $("#formularioEditar").validate({
+            rules: {
+                nombreIngrediente: {
+                    required: true,
+                    minlength: 2,
+                },
+                unidadMedida: {
+                    required: true,
+                    minlength: 1,
+                },
+            },
+            messages: {
+                nombreIngrediente: {
+                    required: "El nombre es requerido",
+                    minlength: "Debe contener mínimo 2 caracteres ",
+                },
+                unidadMedida: {
+                    required: "La unidad es requerida",
+                    minlength: "Debe contener mínimo una letra",
+                },
+            },
+            errorElement: "span",
+            errorClass: "error",
+            errorPlacement: function(error,
+                element) {
+                error.insertAfter(element);
+            },
+            submitHandler: function() {
+                var parametros = $("#formularioEditar").serialize();
+                console.log(parametros)
+                $.ajax({
+                    url: "accionesIngrediente.php",
+                    type: 'POST',
+                    data: parametros,
+                    success: function (respuesta) {
+                        window.location.replace("ingredientes.php");
+                    }
+                });
+            }
         });
+    });
+
+        //editar un ingrediente
+//         $("#botonEditar").on("click",function(){
+//             var parametros=$("#formularioEditar").serialize();
+//             console.log(parametros);
+//             $.ajax({
+//                 method: "POST",
+//                 //C
+//                 url: "accionesIngrediente.php",
+//                 data: parametros,
+//                 success: function(){
+//                     window.location.replace("ingredientes.php");
+//                 }
+//             });
+//         });
 </script>
