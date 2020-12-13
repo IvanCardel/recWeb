@@ -5,7 +5,7 @@
     if(isset($accion)){
         switch($accion){
             case "borrar":{
-                //C
+           
                 $idCategoria=$_POST["idCategoria"];
                 require_once("../conec.php");
                 //C    

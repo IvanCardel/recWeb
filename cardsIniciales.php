@@ -33,8 +33,8 @@
                             echo"</td>
                         </tr>
                     </div>
-                    <div class=\"offset-2 col-4-m3-s2\">
-                        <img src='image/receta/".$fila['foto']."' class=\"card-img-top  bg10\" >
+                    <div class='container'>
+                        <img src='image/receta/".$fila['foto']."' alt=\"Coche\" style=\"width:35%\" class=\"mx-auto d-block bg10\"> 
                     </div>
                 </div>
             </div>
@@ -43,3 +43,7 @@
     ";
     }
 ?>
+
+<!-- <div class=\"offset-2 col-4-m3-s2\">
+<img src='image/receta/".$fila['foto']."' class=\"card-img-top  bg10\" >
+</div> -->

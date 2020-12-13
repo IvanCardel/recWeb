@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg  nvbc navbar-dark sticky-top">
-  <a class="navbar-brand text-primary correoFooter" href="#">Recetario</a>
+  <a class="navbar-brand text-primary correoFooter" href="../index.php">Recetario</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

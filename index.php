@@ -23,6 +23,7 @@ de la página web -->
     <!-- navabar -->
     <?php include_once("layout/navbar.php");?>
     <h1  class="text-center tituloPa2 text-warning">~Recetas~</h1>
+
     <!-- Card -->
     <?php include_once("cardsIniciales.php");?>
     <br>
